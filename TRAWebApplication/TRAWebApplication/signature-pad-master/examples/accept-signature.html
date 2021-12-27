@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Accept a Signature · Signature Pad</title>
+  <style>
+    body { font: normal 100.01%/1.375 "Helvetica Neue",Helvetica,Arial,sans-serif; }
+  </style>
+  <link href="../assets/jquery.signaturepad.css" rel="stylesheet">
+
+  <!--[if lt IE 9]><script src="../assets/flashcanvas.js"></script><![endif]-->
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+</head>
+<body>
+  <form method="post" action="" class="sigPad">
+
+    <p class="drawItDesc">Draw your signature</p>
+    <ul class="sigNav">
+
+      <li class="drawIt"><a href="#draw-it">Draw It</a></li>
+      <li class="clearButton"><a href="#clear">Clear</a></li>
+    </ul>
+    <div class="sig sigWrapper">
+      <div class="typed"></div>
+      <canvas class="pad" width="198" height="55" id="canvas"></canvas>
+
+      <input type="hidden" name="output" class="output">
+    </div>
+    <span style="color:red;display:none;" id="spndata">Please draw your signature.</span>
+
+    <!--<button type="submit">I accept the terms of this agreement.</button>-->
+  </form>
+  <form method="post" action="" class="sigPad" style="display:none">
+
+    <div class="sig sigWrapper">
+      <div class="typed"></div>
+      <canvas class="pad" width="198" height="55" id="canvas1"></canvas>
+
+      <input type="hidden" name="output" class="output">
+    </div>
+   
+  </form>
+ <input type="button" class="btn-success" value="click" id="btndata"/>
+  <script src="../jquery.signaturepad.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('.sigPad').signaturePad();
+    
+    });
+
+    $("#btndata").click(function () {
+      debugger;
+
+
+      var myCanvas = document.getElementById("canvas");
+    
+      if (isCanvasEmpty(myCanvas)) {
+       $('#spndata').css('display', 'block');
+          return false;
+      }
+     $('#spndata').css('display', 'none');
+      var sdd = $("#canvas").val();
+      var myCanvasContext = myCanvas.getContext("2d");
+      var data = myCanvas.toDataURL();
+       var dataInfo = {  data: data  };             
+
+      $.ajax({
+
+        type: "POST",
+        data: JSON.stringify(dataInfo),
+        url: '/Employees/postData',
+        contentType: "application/json;charset=utf-8",
+        dataType: "json",
+        success: function (result) {
+        },
+        error: function(err){
+
+
+        }
+      })
+
+    });
+
+    function isCanvasEmpty(canvas) {
+      debugger;
+
+      var myCanvas1 = document.getElementById("canvas1");
+      var data = myCanvas1.toDataURL();
+      var data1 = canvas.toDataURL();
+      return data == data1;
+
+     
+     }
+
+
+
+  </script>
+  <script src="../assets/json2.min.js"></script>
+</body>

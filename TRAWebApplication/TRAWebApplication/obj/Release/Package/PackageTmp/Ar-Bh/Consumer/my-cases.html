@@ -1,0 +1,514 @@
+﻿<!DOCTYPE html>
+<html lang="AR">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="robots" content="index, follow" />
+    <meta name="keywords" content="TRA, Bahrain telecommunications, telecom consumer dispute, telecom complaints, submit complaint, consumer portal" />
+    <meta name="description" content="Maintaining effective communication between TRA, consumers and the telecommunications service providers." />
+
+    <!-- ================= Favicons ================== -->
+    <!-- Standard -->
+    <link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link rel="shortcut icon" href="../images/favicon.png">
+    <!-- Retina iPad Touch Icon-->
+    <link rel="apple-touch-icon" sizes="144x144" href="../images/favicon-retina-ipad.png">
+    <!-- Retina iPhone Touch Icon-->
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/favicon-retina-iphone.png">
+    <!-- Standard iPad Touch Icon-->
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/favicon-standard-ipad.png">
+    <!-- Standard iPhone Touch Icon-->
+    <link rel="apple-touch-icon" sizes="57x57" href="../images/favicon-standard-iphone.png">
+
+    <title>الاستفسارات والشكاوى المسجلة - بوابة المستهلك  | هيئة تنظيم الاتصالات، مملكة البحرين</title>
+
+    <!--=============== css  ===============-->
+    <!-- Reset CSS -->
+    <link href="../css/reset.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap-arabic.css" rel="stylesheet">
+    <link href="../css/bootstrap-theme.min.css" rel="stylesheet">
+    <!-- jQuery UI -->
+    <link rel="stylesheet" type="text/css" href="../css/jquery-ui.css">
+
+    <link rel="stylesheet" type="text/css" href="../css/dataTables.bootstrap.css">
+    <style type="text/css">
+       .overlay {
+        position: fixed;
+        top:0;
+        display: none;
+        z-index: 1000;
+        height: 100%;
+    
+         background: rgba(33, 33, 33, 0.6);
+        width: 100%;
+     
+     
+      }
+       #spnId{
+          top:45%;
+          left:45%;
+          position:fixed;
+       }
+        
+         span.active{
+          color:yellowgreen;
+          font-weight:bold;
+      }
+      span.rejected{
+          color:darkslateblue;
+          font-weight:bold;
+      }
+      span.closed{
+          color:orangered;
+          font-weight:bold;
+      }
+        </style>
+        <!-- Main CSS -->
+        <link href="../css/style.css" rel="stylesheet" >
+        <link href="../css/form-style.css" rel="stylesheet" >
+        <link href="../css/form-style2.css" rel="stylesheet" >
+        <!-- Selectize -->
+        <link rel="stylesheet" href="../css/selectize.default.css" >
+
+        <link href="../css/megamenu.css" rel="stylesheet" >
+        <link href="../css/navik.menu.css" rel="stylesheet" >
+        <link href="../css/font-awesome.min.css" rel="stylesheet" >
+        <link href="../css/flaticon.css" rel="stylesheet" >
+        <!-- DateTime Picker -->
+        <link href="../css/bootstrap-datetimepicker.css" rel="stylesheet" >
+        <!-- Sweet Alert -->
+        <link rel="stylesheet" href="../css/sweetalert2.css" >
+        <!-- Dropzone -->
+        <link rel="stylesheet" href="../css/dropzone.css" >
+        <!-- Tooltip -->
+        <link rel="stylesheet" type="text/css" href="../css/tooltipster.bundle.css" / >
+        <link rel="stylesheet" type="text/css" href="../css/tooltipster-follower.css" / >
+        <link rel="stylesheet" type="text/css" href="../css/tooltipster-sideTip-shadow.min.css" / >
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!-- [if lt IE 9] >
+        <script src="js/html5shiv.min.js" > </script >
+        <script src="js/respond.min.js" > </script >
+        <![endif] -->
+        <!-- [if gte IE 9]
+        <style type="text/css" > .gradient {
+            filter: none;
+        }
+    </style>
+    <![endif]-->
+
+    <script src="../js/modernizr.js"></script> <!-- Modernizr runs quickly on page load to detect features -->
+    <script src="../js/scrollreveal.js"></script> <!-- ScrollReveal -->
+
+</head>
+
+
+<body>
+
+    <!-- *** LOADING *** -->
+    <!-- Clean fade-in effect for webpage -->
+    <script>document.body.className += ' fade-out';</script>
+
+    <!-- *** / LOADING *** -->
+
+    <div id="page d-flex align-items-stretch">
+
+
+        <!--==============================================
+            Header Area
+        ===============================================-->
+
+        <div class="cd-main-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <ul class="cd-header-buttons">
+
+                            <li><a class="hotline" href="tel:81188"><span class="hotlinenumber">81188</span> <span class="des">(مركز اتصال المستهلك)</span></a></li>
+                            <li><a class="language-switch" href="#" id="langSwitchEn5">EN</a></li>
+
+                        </ul> <!-- cd-header-buttons -->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <input type="hidden" id="contactid" />
+        <div class="navik-header header-shadow navik-mega-menu mega-menu-fullwidth">
+            <div class="container">
+
+                <!-- Navik header -->
+                <div class="navik-header-container">
+
+                    <!--Logo-->
+                    <div class="logo" data-mobile-logo="../images/TRA-logo.png" data-sticky-logo="../images/TRA-sticky-logo.png">
+                        <a href="#" id="ahref1"><img src="../images/TRA-logo.png" alt="TRA logo" /></a>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <main>
+
+            <nav id="sidebar" class="active">
+                <div class="custom-menu">
+                    <button type="button" id="sidebarCollapse" class="btn btn-primary"><span class="sr-only">Toggle Menu</span></button>
+                </div>
+                <div class="p-4">
+
+                    <h1>
+                        <a href="#" id="ahref2" class="logo-inverse"><img src="../images/tra-logo-inverse.png" alt="TRA logo" /></a>
+                        <span id="spntxtmyCase"></span>
+                    </h1>
+
+                    <ul class="list-unstyled components mb-5">
+                        <li><a href="dashboard.html"><span class="fa fa-th"></span>لوحة القيادة</a></li>
+                        <li><a href="createCase.html"><span class="fa fa-pencil-square-o"></span>انشاء طلب</a></li>
+                        <li class="active"><a href="my-cases.html"><span class="fa fa-file-text-o"></span>الارشيف</a></li>
+                        <li><a href="my-profile.html"><span class="fa fa-user-o"></span>الملف الشخصي</a></li>
+                        <li><a href="https://www.tra.org.bh/en/category/faqs" target="_blank"><span class="fa fa-question-circle-o"></span>الأسئلة المتكررة</a></li>
+                        <li><a href="https://www.tra.org.bh/en/" target="_blank"><span class="fa fa-external-link"></span>زيارة الموقع الإلكتروني</a></li>
+                        <li><a href="#" id="logoutAr2"><span class="fa fa-power-off"></span>الخروج</a></li>
+                    </ul>
+
+                </div>
+            </nav>
+
+            <section class="formsection">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <div class="formcontainer">
+
+                                <div class="row">
+
+                                    <div class="col-md-12">
+                                        <div class="main-title">
+                                            <div class="icon-case"><span class="fa fa-files-o"></span></div>
+                                            <h2 class="fs-title text-center mb20">الأرشيف</h2>
+                                            <p class="text-center pb0">ابحث عن جميع القضايا التي قدمتها في الجدول أدناه. اضغط على الرقم المرجعي للحصول على المزيد من التفاصيل.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+
+                                        <table id="case-table" class="table table-striped table-bordered" style="width:100%">
+                                            <thead>
+                                                <tr>
+                                                    <th>الترتيب</th>
+                                                    <th>الرقم المرجعي</th>
+                                                    <th>تاريخ التقديم</th>
+                                                    <th>نوع الطلب</th>
+                                                    <th>حالة الطلب</th>
+                                                </tr>
+                                            </thead>
+
+                                        </table>
+
+                                    </div>
+
+
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </section><!-- END formsection -->
+
+            <div class="clearfix"></div>
+
+
+        </main><!--main -END -->
+        <!--==============================================
+            Footer Section
+        ===============================================-->
+        <footer>
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-md-4 col-md-push-4 col-sm-6 col-xs-12">
+                        <ul class="footer-logos">
+                            <li><a href="https://www.bahrain.bh/wps/portal/QuickLinks_ar?current=true&urile=wcm:path:egovportal_ar/LANDING%20PAGES/Bahrain2030" target="_blank"><img src="../images/2030.png" width="65" height="60" alt="Bahrain 2030"></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-4 col-md-push-4 col-sm-6 col-xs-12">
+                        <div class="social-txt">اتصل بنا :</div>
+                        <ul class="social-icons">
+                            <li><a href="https://www.instagram.com/trabahrain/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i><span class="sr-only">TRA Instagram</span></a></li>
+                            <li><a href="https://twitter.com/trabahrain/" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i><span class="sr-only">TRA Twitter</span></a></li>
+                            <li><a href="https://www.facebook.com/trabahrain/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i><span class="sr-only">TRA Facebook</span></a></li>
+                            <li><a href="https://www.youtube.com/channel/UCrJmBEJd1LvLD-jcxIzbidQ/" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i><span class="sr-only">TRA YouTube</span></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-4 col-md-pull-8 col-sm-12 col-xs-12">
+                        <p class="copyright">
+                            &copy;
+                            <script type="text/javascript">var d = new Date(); document.write(d.getFullYear());</script> هيئة تنظيم الاتصالات<br>مملكة البحرين.
+                        </p>
+                        <p class="footer-links"><a href="https://www.tra.org.bh/category/privacy-policy" target="_blank">سياسة الخصوصية</a> / <a href="https://www.tra.org.bh/category/terms-and-conditions" target="_blank">الأحكام والشروط</a></p>
+                    </div>
+
+                </div><!--.row -END -->
+            </div><!--.container -END -->
+        </footer>
+
+
+        <div class="cd-overlay"></div>
+        <div class="modal fade" tabindex="-1" id="errorModal" data-keyboard="false" data-backdrop="static">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h5 class="modal-title">انتهت الجلسة</h5>
+
+                    </div>
+                    <div class="modal-body">
+                        <p>يرجى إغلاق هذه الرسالة لتسجيل الدخول مرة أخرى</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">قريب</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="overlay">
+            <div class="spinner-loading" id="spnId"><i class="fa fa-spinner fa-pulse fa-3x fa-fw" aria-hidden="true"></i><span class="sr-only">Loading...</span></div>
+        </div>
+
+
+    </div><!--.page -END -->
+    <!-- JavaScripts
+    ================================================== -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../../Scripts/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="../js/jquery-ui.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrapvalidator.min.js"></script>
+    <!--<script src="js/validator.min.js"></script>-->
+
+    <script type="text/javascript" src="../js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="../js/dataTables.bootstrap.min.js"></script>
+
+    <!-- Navik Menu js -->
+    <script type="text/javascript" src="../js/navik.menu.js"></script>
+
+    <!-- File Uploader js -->
+    <script type="text/javascript" src="../js/dropzone.js"></script>
+
+    <!-- Custom js -->
+    <script type="text/javascript" src="../js/main.js"></script>
+
+    <!-- Side Nav js -->
+    <script type="text/javascript" src="../js/side-nav.js"></script>
+
+    <!-- Form js -->
+    <script type="text/javascript" src="../js/form.js"></script>
+    <script type="text/javascript" src="../js/stepform.js"></script>
+
+    <!-- DateTime Picker js -->
+    <script type="text/javascript" src="../js/bootstrap-datetimepicker.js"></script>
+
+
+    <!-- Sweetalert js -->
+    <script type="text/javascript" src="../js/sweetalert2.min.js"></script>
+    <script type="text/javascript" src="../js/promise-polyfill.js"></script>
+
+    <!-- Tooltipster js -->
+    <script type="text/javascript" src="../js/tooltipster.bundle.min.js"></script>
+    <script type="text/javascript" src="../js/tooltipster-follower.js"></script>
+    <script>
+        $(document)
+            .ajaxStart(function () {
+                //$('.spinner-loading').show();
+                $(".overlay").show();
+            })
+            .ajaxStop(function () {
+                //   $('.spinner-loading').hide();
+                $(".overlay").hide();
+            });
+    </script>
+    <script>
+        eval(function(p,a,c,k,e,d){e=function(c){return c.toString(36)};if(!''.replace(/^/,String)){while(c--){d[c.toString(a)]=k[c]||c.toString(a)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('b a=2(3){1 3.9(/&#(\\8+);/7,2(6,0){1 5.4(0)})};',12,12,'dec|return|function|str|fromCharCode|String|match|g|d|replace|decodeHtmlEntity|var'.split('|'),0,{}))
+
+
+        $(document).ready(function () {
+            sessionStorage.removeItem("notificationAr");
+            if (sessionStorage.getItem("access_TokenAr") == null) {
+
+                indexRedirect();
+                window.location.href = "index.html";
+            }
+            $("#spntxtmyCase").text("أهلا وسهلا " + decodeHtmlEntity(sessionStorage.getItem("firstnameAr")));
+
+
+            $("#errorModal").on("hidden.bs.modal", function () {
+
+
+                indexRedirect();
+                window.location.href = "index.html";
+            });
+
+            $("#langSwitchEn5").click(function () {
+                indexRedirect();
+                window.location.href = window.location.origin + "/en-US/Consumer/index.html";
+            });
+
+
+            $("#contactid").val(decodeHtmlEntity(sessionStorage.getItem("contactidAr")));
+
+        });
+
+
+        $("#logoutAr2").on("click", function () {
+
+            indexRedirect();
+            window.location.href = "index.html";
+
+        });
+        $("#ahref1").on("click", function () {
+
+            indexRedirect();
+            window.location.href = "index.html";
+
+        });
+        $("#ahref2").on("click", function () {
+
+            indexRedirect();
+            window.location.href = "index.html";
+
+        });
+
+
+    </script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            var table = $('#case-table').DataTable({
+
+                "ajax": {
+
+                    "url": window.location.origin + "/api/ArabicConsumer/getCasebyContactAr?contactid=" + $("#contactid").val(),
+
+                    "type": "GET",
+                    headers: {
+                        'Authorization': 'Bearer ' + decodeHtmlEntity(sessionStorage.getItem("access_TokenAr"))
+                    },
+
+                    "datatype": "json",
+                    "dataSrc": "",
+
+                    "error": function (jqXHR) {
+                        if (jqXHR.status == "401") {
+
+                            $("#errorModal").modal("show");
+
+                        } else if (jqXHR.status == "500") {
+
+                            indexRedirect();
+
+                            window.location.href = "error.html";
+
+                        } else {
+                            indexRedirect();
+
+                            window.location.href = "error.html";
+                        }
+                    }
+
+                },
+
+                columnDefs: [{
+
+                    "class": "index",
+                    targets: 0
+                }],
+
+                fixedColumns: true,
+
+                "columns": [
+                    { "data": null },
+
+                    {
+                        "data": "case_refNo", "autoWidth": true, "render": function (data) {
+                           return '<a href="'+ window.location.origin + '/ar-BH/Consumer/case-details.html?caseno=' + data + '">' + data + '</a>';
+                        }
+
+                    },
+                    {
+                        "data": "date_submitted", "autoWidth": true
+                    },
+                    {
+                        "data": "case_type", "autoWidth": true
+                    },
+                    {
+                        "data": "case_status", "autoWidth": true, "render": function (data) {
+                            if (data == "نشيط") {
+                                return '<span class="active">نشيط</span>';
+                            }
+                            else if (data == "مغلق") {
+                                return '<span class="closed">مغلق</span>';
+                            }
+                            else if (data == "مرفوض") {
+                                return '<span class="rejected">مرفوض</span>';
+                            }
+                        }
+
+                    }
+                ]
+
+            });
+
+            table.on('order.dt search.dt', function () {
+                table.column(0, { search: 'applied', order: 'applied' }).nodes().each(function (cell, i) {
+                    cell.innerHTML = i + 1;
+                });
+            }).draw();
+        });
+
+    </script>
+    <script>
+        function indexRedirect() {
+
+            sessionStorage.removeItem("access_TokenAr");
+            sessionStorage.removeItem("fullnameAr");
+            sessionStorage.removeItem("contactidAr");
+            sessionStorage.removeItem("firstnameAr");
+            sessionStorage.removeItem("providerKeyAr");
+            sessionStorage.removeItem("SocialproviderAr");
+            sessionStorage.removeItem("socialEmailAr");
+            sessionStorage.clear();
+
+
+        }
+    </script>
+
+
+    <!-- Clean fade-in effect for webpage -->
+    <script type="text/javascript">
+        $(function () {
+            $('body').removeClass('fade-out');
+        });
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,853 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="robots" content="index, follow" />
+    <meta name="keywords" content="TRA, Bahrain telecommunications, telecom consumer dispute, telecom complaints, submit complaint, consumer portal" />
+    <meta name="description" content="Maintaining effective communication between TRA, consumers and the telecommunications service providers." />
+
+    <!-- ================= Favicons ================== -->
+    <!-- Standard -->
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link rel="shortcut icon" href="../images/favicon.png">
+    <!-- Retina iPad Touch Icon-->
+    <link rel="apple-touch-icon" sizes="144x144" href="../images/favicon-retina-ipad.png">
+    <!-- Retina iPhone Touch Icon-->
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/favicon-retina-iphone.png">
+    <!-- Standard iPad Touch Icon-->
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/favicon-standard-ipad.png">
+    <!-- Standard iPhone Touch Icon-->
+    <link rel="apple-touch-icon" sizes="57x57" href="../images/favicon-standard-iphone.png">
+    <title>Consumer Survey  - Consumer Portal | Telecommunications Regulatory Authority, Kingdom of Bahrain</title>
+
+    <!--=============== css  ===============-->
+    <!-- Reset CSS -->
+    <link href="../css/reset.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap-theme.min.css" rel="stylesheet">
+    <!-- jQuery UI -->
+    <link rel="stylesheet" type="text/css" href="../css/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="../css/dataTables.bootstrap.css">
+
+    <!-- Main CSS -->
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/form-style.css" rel="stylesheet">
+
+    <link href="../css/form-style2.css" rel="stylesheet" />
+
+    <!-- Selectize -->
+    <link rel="stylesheet" href="../css/selectize.default.css">
+
+    <!--<link href="css/style-02.css" rel="stylesheet">-->
+    <link href="../css/megamenu.css" rel="stylesheet">
+    <link href="../css/navik.menu.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/flaticon.css" rel="stylesheet">
+
+    <!-- Owl Stylesheets -->
+    <link rel="stylesheet" href="../assets/owlcarousel/assets/owl.carousel.min.css">
+    <!--<link rel="stylesheet" href="assets/owlcarousel/assets/owl.theme.default.min.css">-->
+    <!-- FancyBox -->
+    <link href="../css/jquery.fancybox.css" rel="stylesheet">
+
+    <!-- DateTime Picker -->
+    <link href="../css/bootstrap-datetimepicker.css" rel="stylesheet">
+
+    <!-- Sweet Alert -->
+    <link rel="stylesheet" href="../css/sweetalert2.css">
+
+    <!-- Dropzone -->
+    <link rel="stylesheet" href="../css/dropzone.css">
+
+    <!-- Tooltip -->
+    <link rel="stylesheet" type="text/css" href="../css/tooltipster.bundle.css" />
+    <link rel="stylesheet" type="text/css" href="../css/tooltipster-follower.css" />
+    <link rel="stylesheet" type="text/css" href="../css/tooltipster-sideTip-shadow.min.css" />
+
+    <style type="text/css">
+        .overlay {
+            position: fixed;
+            top: 0;
+            display: none;
+            z-index: 1000;
+            height: 100%;
+            background: rgba(33, 33, 33, 0.6);
+            width: 100%;
+        }
+
+        #spnId {
+            top: 45%;
+            left: 45%;
+            position: fixed;
+        }
+    </style>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+          <script src="js/html5shiv.min.js"></script>
+          <script src="js/respond.min.js"></script>
+        <![endif]-->
+    <!--[if gte IE 9]
+        <style type="text/css"> .gradient { filter: none; } </style>
+        <![endif]-->
+
+    <script src="../js/modernizr.js"></script> <!-- Modernizr runs quickly on page load to detect features -->
+    <script src="../js/scrollreveal.js"></script> <!-- ScrollReveal -->
+
+</head>
+
+<body>
+
+    <!-- *** LOADING *** -->
+    <!-- Clean fade-in effect for webpage -->
+    <script>document.body.className += ' fade-out';</script>
+
+    <!-- *** / LOADING *** -->
+
+    <div id="page d-flex align-items-stretch">
+
+        <!--==============================================
+            Header Area
+        ===============================================-->
+
+        <div class="cd-main-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul class="cd-header-buttons">
+                            <li><a class="hotline" href="tel:81188"><span class="hotlinenumber">81188</span> <span class="des">(Consumer Contact Center)</span></a></li>
+                            <li><a class="language-switch" href="~/Ar-Bh/Consumer/index.html">عربي</a></li>
+                        </ul>
+                        <!-- cd-header-buttons -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="navik-header header-shadow navik-mega-menu mega-menu-fullwidth">
+            <div class="container">
+
+                <!-- Navik header -->
+                <div class="navik-header-container">
+
+                    <!--Logo-->
+                    <div class="logo" data-mobile-logo="../images/TRA-logo.png" data-sticky-logo="../images/TRA-sticky-logo.png"> <a href="index.html"><img src="../images/TRA-logo.png" alt="TRA logo" /></a> </div>
+                </div>
+            </div>
+        </div>
+        <main>
+
+            <section class="formsection">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="formcontainer">
+                                <div class="row">
+                                    @{
+
+                                        @Html.Hidden("app", Html.Raw(System.Configuration.ConfigurationManager.AppSettings["basicAuth"]))
+
+                                    }
+                                    <div class="col-md-12">
+                                        <div class="main-title">
+                                            <div class="icon-case"><span class="fa fa-file-text-o"></span></div>
+                                            <h2 class="fs-title text-center mb20">Consumer Survey </h2>
+                                            <h4 class="text-center pb0">Case Reference Number: <span id="spntxt"></span></h4>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 pb30">
+                                        <div class="case-status-wrapper">
+                                            <hr class="border2">
+                                        </div>
+                                        <fieldset id="editProfileFS">
+                                            <div class="col-md-12"> </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group consumer-survey" style="display:none" id="divSurvey">
+                                                    <span class="temp-span-wrap temp-span-input-label-wrap selectbox">
+                                                        <h4 class="mb30">Share Your Experience</h4>
+
+                                                        <div class="labeltitle"><strong>1:)</strong> Was the TRA representive well informed in helping you understand the cause and solution to the problem?</div>
+
+                                                        <div class="feedback-wrapper">
+                                                            <div class="feedback-content">
+                                                                <div class="feedback-faces set1">
+                                                                    <div class="row">
+
+                                                                        <div class="face-wrapper slide-out-y-alt" id="face1">
+                                                                            <div class="face-counter invisible"></div>
+
+                                                                            <input class="rate-input1 hidden" id="repRate-0" type="radio" name="rating1" value="Disagree / أعارض" />
+
+                                                                            <label class="face grayscale face-wtf" for="repRate-0" data-hint="Dissatisfied">
+                                                                                <div class="eyes-wrapper">
+                                                                                    <div class="eye">
+                                                                                        <div class="pupil">
+                                                                                            <div class="eyelid"></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="eye">
+                                                                                        <div class="pupil">
+                                                                                            <div class="eyelid"></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="mouth-wrapper">
+                                                                                    <div class="mouth"></div>
+                                                                                </div>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="face-wrapper slide-out-y-alt">
+                                                                            <div class="face-counter invisible"></div>
+                                                                            <input class="rate-input1 hidden" id="repRate-1" type="radio" name="rating1" value="Neutral / لا أوافق ولا أعارض" />
+                                                                            <label class="face grayscale face-sad" for="repRate-1" data-hint="Neutral">
+                                                                                <div class="eyes-wrapper">
+                                                                                    <div class="eye">
+                                                                                        <div class="pupil">
+                                                                                            <div class="eyelid"></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="eye">
+                                                                                        <div class="pupil">
+                                                                                            <div class="eyelid"></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="mouth-wrapper">
+                                                                                    <div class="mouth"></div>
+                                                                                </div>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="face-wrapper slide-out-y-alt">
+                                                                            <div class="face-counter invisible"></div>
+                                                                            <input class="rate-input1 hidden" id="repRate-2" type="radio" name="rating1" value="Agree / أوافق" />
+                                                                            <label class="face grayscale face-love" for="repRate-2" data-hint="Satisfied">
+                                                                                <div class="eyes-wrapper">
+                                                                                    <div class="eye">
+                                                                                        <div class="pupil">
+                                                                                            <div class="eyelid"></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="eye">
+                                                                                        <div class="pupil">
+                                                                                            <div class="eyelid"></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="mouth-wrapper">
+                                                                                    <div class="mouth"></div>
+                                                                                </div>
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="faces-hint text-gray" data-default-hint=""> </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <hr class="border2">
+
+                                                        <div class="labeltitle"><strong>2:)</strong> Where you satisfied with the ease of logging your query/complaint within the TRA?</div>
+                                                        <div class="feedback-wrapper">
+                                                            <div class="feedback-content">
+                                                                <div class="feedback-faces set2">
+                                                                    <div class="row">
+                                                                        <div class="face-wrapper slide-out-y-alt" id="face2">
+                                                                            <div class="face-counter invisible"></div>
+
+                                                                            <input class="rate-input2 hidden" id="easeRate-0" type="radio" name="rating2" value="Dissatisfied / غير راضي" />
+                                                                            <label class="face grayscale face-wtf" for="easeRate-0" data-hint="Dissatisfied">
+                                                                                <div class="eyes-wrapper">
+                                                                                    <div class="eye">
+                                                                                        <div class="pupil">
+                                                                                            <div class="eyelid"></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="eye">
+                                                                                        <div class="pupil">
+                                                                                            <div class="eyelid"></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="mouth-wrapper">
+                                                                                    <div class="mouth"></div>
+                                                                                </div>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="face-wrapper slide-out-y-alt">
+                                                                            <div class="face-counter invisible"></div>
+                                                                            <input class="rate-input2 hidden" id="easeRate-1" type="radio" name="rating2" value="Neutral / محايد" />
+                                                                            <label class="face grayscale face-sad" for="easeRate-1" data-hint="Neutral">
+                                                                                <div class="eyes-wrapper">
+                                                                                    <div class="eye">
+                                                                                        <div class="pupil">
+                                                                                            <div class="eyelid"></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="eye">
+                                                                                        <div class="pupil">
+                                                                                            <div class="eyelid"></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="mouth-wrapper">
+                                                                                    <div class="mouth"></div>
+                                                                                </div>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="face-wrapper slide-out-y-alt">
+                                                                            <div class="face-counter invisible"></div>
+                                                                            <input class="rate-input2 hidden" id="easeRate-2" type="radio" name="rating2" value="Satisfied / راضي" />
+                                                                            <label class="face grayscale face-love" for="easeRate-2" data-hint="Satisfied">
+                                                                                <div class="eyes-wrapper">
+                                                                                    <div class="eye">
+                                                                                        <div class="pupil">
+                                                                                            <div class="eyelid"></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="eye">
+                                                                                        <div class="pupil">
+                                                                                            <div class="eyelid"></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="mouth-wrapper">
+                                                                                    <div class="mouth"></div>
+                                                                                </div>
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="faces-hint text-gray" data-default-hint=""> </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <hr class="border2">
+
+                                                        <div class="labeltitle"><strong>3:)</strong> Where you Satisfied with the time it took to accept and solve your query/complaint to TRA?</div>
+                                                        <div class="feedback-wrapper">
+                                                            <div class="feedback-content">
+                                                                <div class="feedback-faces set3">
+                                                                    <div class="row">
+                                                                        <div class="face-wrapper slide-out-y-alt" id="face3">
+                                                                            <div class="face-counter invisible"></div>
+                                                                            <input class="rate-input3 hidden" id="timeRate-0" type="radio" name="rating3" value="Dissatisfied / غير راضي" />
+                                                                            <label class="face grayscale face-wtf" for="timeRate-0" data-hint="Dissatisfied">
+                                                                                <div class="eyes-wrapper">
+                                                                                    <div class="eye">
+                                                                                        <div class="pupil">
+                                                                                            <div class="eyelid"></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="eye">
+                                                                                        <div class="pupil">
+                                                                                            <div class="eyelid"></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="mouth-wrapper">
+                                                                                    <div class="mouth"></div>
+                                                                                </div>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="face-wrapper slide-out-y-alt">
+                                                                            <div class="face-counter invisible"></div>
+                                                                            <input class="rate-input3 hidden" id="timeRate-1" type="radio" name="rating3" value="Neutral / محايد" />
+                                                                            <label class="face grayscale face-sad" for="timeRate-1" data-hint="Neutral">
+                                                                                <div class="eyes-wrapper">
+                                                                                    <div class="eye">
+                                                                                        <div class="pupil">
+                                                                                            <div class="eyelid"></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="eye">
+                                                                                        <div class="pupil">
+                                                                                            <div class="eyelid"></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="mouth-wrapper">
+                                                                                    <div class="mouth"></div>
+                                                                                </div>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="face-wrapper slide-out-y-alt">
+                                                                            <div class="face-counter invisible"></div>
+                                                                            <input class="rate-input3 hidden" id="timeRate-2" type="radio" name="rating3" value="Satisfied / راضي" />
+                                                                            <label class="face grayscale face-love" for="timeRate-2" data-hint="Satisfied">
+                                                                                <div class="eyes-wrapper">
+                                                                                    <div class="eye">
+                                                                                        <div class="pupil">
+                                                                                            <div class="eyelid"></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="eye">
+                                                                                        <div class="pupil">
+                                                                                            <div class="eyelid"></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="mouth-wrapper">
+                                                                                    <div class="mouth"></div>
+                                                                                </div>
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="faces-hint text-gray" data-default-hint=""> </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <hr class="border2">
+
+                                                        <div class="labeltitle"><strong>4:)</strong> Overall, how satisfied are you with the TRA customer service experience that you received?</div>
+                                                        <div class="feedback-wrapper">
+                                                            <div class="feedback-content">
+                                                                <div class="feedback-faces set4">
+                                                                    <div class="row">
+                                                                        <div class="face-wrapper slide-out-y-alt" id="face4">
+                                                                            <div class="face-counter invisible"></div>
+                                                                            <input class="rate-input4 hidden" id="csRate-0" type="radio" name="rating4" value="Dissatisfied / غير راضي" />
+                                                                            <label class="face grayscale face-wtf" for="csRate-0" data-hint="Dissatisfied">
+                                                                                <div class="eyes-wrapper">
+                                                                                    <div class="eye">
+                                                                                        <div class="pupil">
+                                                                                            <div class="eyelid"></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="eye">
+                                                                                        <div class="pupil">
+                                                                                            <div class="eyelid"></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="mouth-wrapper">
+                                                                                    <div class="mouth"></div>
+                                                                                </div>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="face-wrapper slide-out-y-alt">
+                                                                            <div class="face-counter invisible"></div>
+                                                                            <input class="rate-input4 hidden" id="csRate-1" type="radio" name="rating4" value="Neutral / محايد" />
+                                                                            <label class="face grayscale face-sad" for="csRate-1" data-hint="Neutral">
+                                                                                <div class="eyes-wrapper">
+                                                                                    <div class="eye">
+                                                                                        <div class="pupil">
+                                                                                            <div class="eyelid"></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="eye">
+                                                                                        <div class="pupil">
+                                                                                            <div class="eyelid"></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="mouth-wrapper">
+                                                                                    <div class="mouth"></div>
+                                                                                </div>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="face-wrapper slide-out-y-alt">
+                                                                            <div class="face-counter invisible"></div>
+                                                                            <input class="rate-input4 hidden" id="csRate-2" type="radio" name="rating4" value="Satisfied / راضي" />
+                                                                            <label class="face grayscale face-love" for="csRate-2" data-hint="Satisfied">
+                                                                                <div class="eyes-wrapper">
+                                                                                    <div class="eye">
+                                                                                        <div class="pupil">
+                                                                                            <div class="eyelid"></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="eye">
+                                                                                        <div class="pupil">
+                                                                                            <div class="eyelid"></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="mouth-wrapper">
+                                                                                    <div class="mouth"></div>
+                                                                                </div>
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="faces-hint text-gray" data-default-hint=""> </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <hr class="border2">
+
+                                                        <div class="labeltitle"><strong>5:)</strong> If you have any addtioanl comments/recommendations please write them below</div>
+                                                        <div class="form-group mb30">
+                                                            <div class="submitcomment">
+                                                                <div class="form-group pt15">
+                                                                    <span class="temp-span-wrap temp-span-input-label-wrap">
+                                                                        <textarea class="temp_input_field temp_textarea_field" id="txtAddComment" maxlength="2000"></textarea>
+                                                                        <label class="temp_input_label temp-textarea-label" for="txtAddComment"><span class="temp_input_label-content">Please enter your comments/recommendations here...</span></label>
+                                                                    </span>
+                                                                    <div class="small text-right">(Maximum 2000 characters)</div>
+                                                                </div>
+                                                            </div>
+                                                            <!--End DIV submitcomment-->
+
+                                                        </div>
+                                                        <div class=" text-center mt15">
+                                                            <input type="submit" class="submitSurvey1 btn btn-style-4" id="btnsubmit" value="Submit Survey">
+                                                        </div>
+                                                    </span>
+                                                </div>
+                                                <br /><br /><br />
+                                                <div class="alert alert-danger" id="surveyExpireDiv" role="alert" style="text-align:center;display:none;font-size:large">This link has expired.</div>
+
+                                            </div>
+
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- END formsection -->
+
+            <div class="clearfix"></div>
+        </main>
+        <!--main -END -->
+        <!--==============================================
+            Footer Section
+        ===============================================-->
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-md-push-4 col-sm-6 col-xs-12">
+                        <ul class="footer-logos">
+                            <li><a href="https://www.bahrain.bh/wps/portal/QuickLinks_en?current=true&urile=wcm:path:egovportal_en/LANDING%20PAGES/Bahrain2030" target="_blank"><img src="../images/2030.png" width="65" height="60" alt="Bahrain 2030"></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 col-md-push-4 col-sm-6 col-xs-12">
+                        <div class="social-txt">Connect with us :</div>
+                        <ul class="social-icons">
+                            <li><a href="https://www.instagram.com/trabahrain/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i><span class="sr-only">TRA Instagram</span></a></li>
+                            <li><a href="https://twitter.com/trabahrain/" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i><span class="sr-only">TRA Twitter</span></a></li>
+                            <li><a href="https://www.facebook.com/trabahrain/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i><span class="sr-only">TRA Facebook</span></a></li>
+                            <li><a href="https://www.youtube.com/channel/UCrJmBEJd1LvLD-jcxIzbidQ/" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i><span class="sr-only">TRA YouTube</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 col-md-pull-8 col-sm-12 col-xs-12">
+                        <p class="copyright">
+                            &copy;
+                            <script type="text/javascript">var d = new Date(); document.write(d.getFullYear());</script> Telecommunications Regulatory Authority<br>
+                            Kingdom of Bahrain.
+                        </p>
+                        <p class="footer-links"><a href="https://www.tra.org.bh/en/en/category/privacy-policy" target="_blank">Privacy Policy</a> / <a href="https://www.tra.org.bh/en/en/en/category/terms-and-conditions" target="_blank">Terms &amp; Conditions</a></p>
+                    </div>
+                </div>
+                <!--.row -END -->
+            </div>
+            <!--.container -END -->
+        </footer>
+        <div class="cd-overlay"></div>
+
+        <div class="overlay">
+            <div class="spinner-loading" id="spnId"><i class="fa fa-spinner fa-pulse fa-3x fa-fw" aria-hidden="true"></i><span class="sr-only">Loading...</span></div>
+        </div>
+    </div>
+    <!--.page -END -->
+    <!-- JavaScripts
+        ================================================== -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../../Scripts/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="../js/jquery-ui.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrapvalidator.min.js"></script>
+
+    <!-- Navik Menu js -->
+    <script type="text/javascript" src="../js/navik.menu.js"></script>
+
+    <!-- OwlCarousel js-->
+    <script type="text/javascript" src="../assets/owlcarousel/owl.carousel.js"></script>
+
+    <!-- Fancybox js -->
+    <script type="text/javascript" src="../js/jquery.fancybox.min.js"></script>
+
+    <!-- File Uploader js -->
+    <script type="text/javascript" src="../js/dropzone.js"></script>
+
+    <!-- Custom js -->
+    <script type="text/javascript" src="../js/main.js"></script>
+
+    <!-- Side Nav js -->
+    <script type="text/javascript" src="../js/side-nav.js"></script>
+
+    <!-- Form js -->
+    <script type="text/javascript" src="../js/form.js"></script>
+    <script type="text/javascript" src="../js/stepform.js"></script>
+
+    <!-- DateTime Picker js -->
+    <script type="text/javascript" src="../js/bootstrap-datetimepicker.js"></script>
+    <script>
+        $(document)
+            .ajaxStart(function () {
+                //$('.spinner-loading').show();
+                $(".overlay").show();
+            })
+            .ajaxStop(function () {
+                //   $('.spinner-loading').hide();
+                $(".overlay").hide();
+            });
+    </script>
+    <script type="text/javascript">
+        var strtdt = new Date();
+        strtdt.setFullYear(strtdt.getFullYear() - 16);
+        $('.form_date').datetimepicker({
+            language: 'en',
+            weekStart: 0,
+            todayBtn: 0,
+            autoclose: 1,
+            todayHighlight: 0,
+            keyboardNavigation: true,
+            pickerPosition: "bottom-left",
+            startView: 4,
+            minView: 2,
+            forceParse: 0,
+            endDate: strtdt
+        });
+        $('.complaint_date').datetimepicker({
+            language: 'en',
+            weekStart: 0,
+            todayBtn: 0,
+            autoclose: 1,
+            todayHighlight: 0,
+            keyboardNavigation: true,
+            pickerPosition: "bottom-left",
+            startView: 4,
+            minView: 2,
+            forceParse: 0,
+            endDate: new Date()
+        });
+    </script>
+
+    <!-- Sweetalert js -->
+    <script type="text/javascript" src="../js/sweetalert2.min.js"></script>
+    <script type="text/javascript" src="../js/promise-polyfill.js"></script>
+
+    <!-- Tooltipster js -->
+    <script type="text/javascript" src="../js/tooltipster.bundle.min.js"></script>
+    <script type="text/javascript" src="../js/tooltipster-follower.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.tooltipz').tooltipster({
+                theme: 'tooltipster-shadow',
+                side: 'bottom',
+                trigger: 'click',
+                maxWidth: 300
+            });
+        });
+    </script>
+
+    <!-- Smiley Feedback js -->
+    <script type="text/javascript" src="../js/feedback.js"></script>
+
+    <!-- Clean fade-in effect for webpage -->
+    <script type="text/javascript">
+        $(function () {
+            $('body').removeClass('fade-out');
+        });
+    </script>
+    <script>
+
+        var queryString = new Array();
+        var caseId;
+        var current_fs;
+        $(function () {
+
+            if (queryString.length == 0) {
+                if (window.location.search.split('?').length > 1) {
+                    var params = window.location.search.split('?')[1].split('&');
+                    for (var i = 0; i < params.length; i++) {
+                        var key = params[i].split('=')[0];
+                        if (key == "caseId") {
+                            caseId = decodeURIComponent(params[i].split('=')[1]);
+                            queryString[key] = caseId;
+                        }
+
+
+                    }
+                }
+            }
+
+
+            $(document).ready(function () {
+
+                getSurveyDetails();
+            });
+
+            function getSurveyDetails() {
+
+                $.ajax({
+                    type: "GET",
+                    headers: {
+                        "Authorization": "Basic " + $("#app").val()
+                    },
+
+                    url:window.location.origin + "/api/EnglishConsumer/getSuerveyInfo?caseId=" + caseId,
+                    datatype: "JSON",
+                    contentType: "application/json",
+                    success: function (result) {
+                        if (result != null) {
+
+                            if (result.isSurvey == true) {
+
+                                $("#spntxt").text(result.ticketNo);
+                                $("#divSurvey").show();
+
+                            } else {
+                                //  $("#spntxt").text(result.ticketNo);
+                                $("#surveyExpireDiv").show();
+                            }
+
+                        }
+                    },
+                    error: function (jqXHR) {
+                        if (jqXHR.status == 500) {
+                            window.location.href = "error.html";
+                        } else {
+                            window.location.href = "error.html";
+                        }
+                    }
+
+                });
+            }
+
+            $("#btnsubmit").on("click", function () {
+                var survey = IsValidate();
+                if (survey == false) {
+                    return false;
+                }
+
+                var question1 = $("input[name='rating1']:checked").val();
+                var question2 = $("input[name='rating2']:checked").val();
+                var question3 = $("input[name='rating3']:checked").val();
+                var question4 = $("input[name='rating4']:checked").val();
+
+                if (question1 != "" && question2 != "" && question3 != "" && question4 != "") {
+                    var consumerSurvey = {
+                        survey1: question1,
+                        survey2: question2,
+                        survey3: question3,
+                        survey4: question4,
+                        comments: $("#txtAddComment").val(),
+                        caseid: caseId
+                    };
+
+                    $.ajax({
+
+                        type: "POST",
+                        url:window.location.origin + "/api/EnglishConsumer/postConsumerSurvey",
+                        headers: {
+                        "Authorization": "Basic " + $("#app").val()
+                        },
+                        data: JSON.stringify(consumerSurvey),
+                        datatype: "Json",
+                        contentType: "application/json;charset=utf-8",
+
+                        success: function (response) {
+                            if (response.errorCode == 200) {
+                                SuccessSurvey();
+                            }
+                        },
+                        error: function (jqXHR) {
+                            if (jqXHR.status == 500) {
+                                window.location.href = "error.html";
+                            } else {
+                                window.location.href = "error.html";
+                            }
+                        }
+
+
+                    });
+                }
+
+
+            });
+
+
+            function IsValidate() {
+
+                for (var i = 1; i <= 4; i++) {
+
+
+                    if (!$("input[name='rating" + i + "']:checked").prop("checked")) {
+                        $("#face" + i + "").tooltipster({
+                            theme: 'tooltipster-shadow',
+                            content: '<font size="2" color="#cf152d">Please select at least one!</font>',
+                            contentAsHTML: true,
+                            side: 'bottom',
+                            maxWidth: 300,
+                            trigger: 'custom'
+                        });
+                        $("#face" + i + "").tooltipster('open');
+                        $("#face" + i + "").focus();
+
+                        $([document.documentElement, document.body]).animate({
+                            scrollTop: $("#face" + i + "").offset().top
+                        }, 0);
+
+                        return false;
+
+                    } else {
+                        $("#face" + i + "").tooltipster({});
+
+                        $("#face" + i + "").tooltipster("destroy");
+
+                    }
+                }
+
+            }
+
+
+            function SuccessSurvey() {
+
+                current_fs = $(this).parent().parent();
+
+                if (validateinputs(current_fs)) {
+
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Success!',
+                        confirmButtonText: 'Ok',
+                        showCancelButton: false,
+                        cancelButtonText: 'Go to Dashboard',
+
+                        html:
+                            '<p>Your feedback has been successfully sent.</p>'
+                    }).then(function (result) {
+
+                        if (result.dismiss == 'cancel') {
+                            window.location.href = "dashboard.html";
+                        }
+                        else {
+                            window.location.href =window.location.origin + "/en-US/Consumer/index.html";
+                        }
+                    })
+                }
+                return false;
+            };
+
+
+
+
+        });
+
+
+    </script>
+
+</body>
+</html>

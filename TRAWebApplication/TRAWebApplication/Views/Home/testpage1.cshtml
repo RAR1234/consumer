@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "testpage1";
+}
+
+<h2>testpage1</h2>
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta name="viewport" content="width=decice-width" />
+    <title></title>
+
+</head>
+<body>
+    <div>
+       @*@TempData["one"]
+       @{ 
+           TempData.Keep("one");
+       }*@
+
+        @{ 
+            string str = TempData.Peek("one").ToString();
+        }
+        <a href="testpage2">For Testpage2</a>
+    </div>
+</body>
+</html>

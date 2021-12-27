@@ -1,0 +1,942 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D50E04FC-3F52-4726-9C0F-8211B35812C0}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TRAWebApplication</RootNamespace>
+    <AssemblyName>TRAWebApplication</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44300</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>3.7</TypeScriptToolsVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Crm.Sdk.Proxy, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CrmSdk.CoreAssemblies.9.0.2.24\lib\net462\Microsoft.Crm.Sdk.Proxy.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin.Security.Facebook, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.1.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Sdk, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CrmSdk.CoreAssemblies.9.0.2.24\lib\net462\Microsoft.Xrm.Sdk.dll</HintPath>
+    </Reference>
+    <Reference Include="PasswordStrengthIndicator.Core, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PasswordStrengthIndicator.2.2.0\lib\PasswordStrengthIndicator.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.2\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.2\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.4.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.4.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.4.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.4.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.7\lib\net45\System.Web.Http.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
+    <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
+    <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageAreaRegistration.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageConfigurationExtensions.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\CollectionModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ComplexTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\DictionaryModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumValueDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\IModelDocumentationProvider.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\KeyValuePairModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescriptionGenerator.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameAttribute.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameHelper.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterAnnotation.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\SimpleTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\Models\HelpPageApiModel.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleKey.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ImageSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\InvalidSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ObjectGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
+    <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Authorization\AuthCredential.cs" />
+    <Compile Include="Authorization\BasicAuth.cs" />
+    <Compile Include="BuisnessLayer\ArabicConsumer.cs" />
+    <Compile Include="BuisnessLayer\EnglishConsumer.cs" />
+    <Compile Include="BuisnessLayer\IArabicConsumer.cs" />
+    <Compile Include="BuisnessLayer\IEnglishConsumer.cs" />
+    <Compile Include="ConfigSetting\ConfigData.cs" />
+    <Compile Include="ConfigSetting\Exceptions.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ArabicConsumerController.cs" />
+    <Compile Include="Controllers\EnglishConsumerController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Facebook\FacebookBackChannelHandler.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountBindingModels.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\viewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\ApplicationOAuthProvider.cs" />
+    <Compile Include="Results\ChallengeResult.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Ar-Bh\assets\c3\c3.css" />
+    <Content Include="Ar-Bh\assets\c3\c3.min.js" />
+    <Content Include="Ar-Bh\assets\c3\d3.min.js" />
+    <Content Include="Ar-Bh\assets\owlcarousel\assets\ajax-loader.gif" />
+    <Content Include="Ar-Bh\assets\owlcarousel\assets\owl.carousel.css" />
+    <Content Include="Ar-Bh\assets\owlcarousel\assets\owl.carousel.min.css" />
+    <Content Include="Ar-Bh\assets\owlcarousel\assets\owl.theme.default.css" />
+    <Content Include="Ar-Bh\assets\owlcarousel\assets\owl.theme.default.min.css" />
+    <Content Include="Ar-Bh\assets\owlcarousel\assets\owl.theme.green.css" />
+    <Content Include="Ar-Bh\assets\owlcarousel\assets\owl.theme.green.min.css" />
+    <Content Include="Ar-Bh\assets\owlcarousel\assets\owl.video.play.png" />
+    <Content Include="Ar-Bh\assets\owlcarousel\owl.carousel.js" />
+    <Content Include="Ar-Bh\assets\owlcarousel\owl.carousel.min.js" />
+    <Content Include="Ar-Bh\Consumer\case-details.html" />
+    <Content Include="Ar-Bh\Consumer\createCase.html" />
+    <Content Include="Ar-Bh\Consumer\dashboard.html" />
+    <Content Include="Ar-Bh\Consumer\error.html" />
+    <Content Include="Ar-Bh\Consumer\index.html" />
+    <Content Include="Ar-Bh\Consumer\my-profile.html" />
+    <Content Include="Ar-Bh\Consumer\my-cases.html" />
+    <Content Include="Ar-Bh\css\bootstrap-arabic.css" />
+    <Content Include="Ar-Bh\css\bootstrap-datetimepicker.css" />
+    <Content Include="Ar-Bh\css\bootstrap-datetimepicker.min.css" />
+    <Content Include="Ar-Bh\css\bootstrap-theme.min.css" />
+    <Content Include="Ar-Bh\css\bootstrap.min.css" />
+    <Content Include="Ar-Bh\css\dataTables.bootstrap.css" />
+    <Content Include="Ar-Bh\css\dropzone.css" />
+    <Content Include="Ar-Bh\css\flaticon.css" />
+    <Content Include="Ar-Bh\css\font-awesome.min.css" />
+    <Content Include="Ar-Bh\css\footable.standalone.min.css" />
+    <Content Include="Ar-Bh\css\form-style.css" />
+    <Content Include="Ar-Bh\css\form-style2.css" />
+    <Content Include="Ar-Bh\css\iziModal.css" />
+    <Content Include="Ar-Bh\css\jquery-ui.css" />
+    <Content Include="Ar-Bh\css\jquery.fancybox.css" />
+    <Content Include="Ar-Bh\css\megamenu.css" />
+    <Content Include="Ar-Bh\css\navik.menu.css" />
+    <Content Include="Ar-Bh\css\reset.css" />
+    <Content Include="Ar-Bh\css\revolution\assets\coloredbg.png" />
+    <Content Include="Ar-Bh\css\revolution\assets\gridtile.png" />
+    <Content Include="Ar-Bh\css\revolution\assets\gridtile_3x3.png" />
+    <Content Include="Ar-Bh\css\revolution\assets\gridtile_3x3_white.png" />
+    <Content Include="Ar-Bh\css\revolution\assets\gridtile_white.png" />
+    <Content Include="Ar-Bh\css\revolution\assets\loader.gif" />
+    <Content Include="Ar-Bh\css\revolution\assets\sources\fb.png" />
+    <Content Include="Ar-Bh\css\revolution\assets\sources\fr.png" />
+    <Content Include="Ar-Bh\css\revolution\assets\sources\ig.png" />
+    <Content Include="Ar-Bh\css\revolution\assets\sources\post.png" />
+    <Content Include="Ar-Bh\css\revolution\assets\sources\revolution_slide1.png" />
+    <Content Include="Ar-Bh\css\revolution\assets\sources\revolution_slide2.png" />
+    <Content Include="Ar-Bh\css\revolution\assets\sources\tw.png" />
+    <Content Include="Ar-Bh\css\revolution\assets\sources\vm.png" />
+    <Content Include="Ar-Bh\css\revolution\assets\sources\wc.png" />
+    <Content Include="Ar-Bh\css\revolution\assets\sources\yt.png" />
+    <Content Include="Ar-Bh\css\revolution\assets\svg\index.php" />
+    <Content Include="Ar-Bh\css\revolution\layers.css" />
+    <Content Include="Ar-Bh\css\revolution\navigation.css" />
+    <Content Include="Ar-Bh\css\revolution\settings-.css" />
+    <Content Include="Ar-Bh\css\revolution\settings.css" />
+    <Content Include="Ar-Bh\css\selectize.default.css" />
+    <Content Include="Ar-Bh\css\style.css" />
+    <Content Include="Ar-Bh\css\sweetalert2.css" />
+    <Content Include="Ar-Bh\css\tooltipster-follower.css" />
+    <Content Include="Ar-Bh\css\tooltipster-sideTip-shadow.min.css" />
+    <Content Include="Ar-Bh\css\tooltipster.bundle.css" />
+    <Content Include="Ar-Bh\fonts\FamiliarPro-Bold.svg" />
+    <Content Include="Ar-Bh\fonts\FamiliarPro-Regular.svg" />
+    <Content Include="Ar-Bh\fonts\flaticon.svg" />
+    <Content Include="Ar-Bh\fonts\fontawesome-webfont.svg" />
+    <Content Include="Ar-Bh\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Ar-Bh\fonts\LarkeNeue-Regular.svg" />
+    <Content Include="Ar-Bh\fonts\LarkeNeueBold-Bold.svg" />
+    <Content Include="Ar-Bh\fonts\LarkeNeueThin-Thin.svg" />
+    <Content Include="Ar-Bh\images\2030.png" />
+    <Content Include="Ar-Bh\images\announcement-bg.png" />
+    <Content Include="Ar-Bh\images\awareness_campaigns\contract_awareness_campaign.jpg" />
+    <Content Include="Ar-Bh\images\awareness_campaigns\know_your_rights.jpg" />
+    <Content Include="Ar-Bh\images\awareness_campaigns\nisr.jpg" />
+    <Content Include="Ar-Bh\images\awareness_campaigns\nisr_executive.jpg" />
+    <Content Include="Ar-Bh\images\awareness_campaigns\resolve_issues_with_your_telecom.jpg" />
+    <Content Include="Ar-Bh\images\awareness_campaigns\roaming_awareness.jpg" />
+    <Content Include="Ar-Bh\images\awareness_campaigns\safesurf.jpg" />
+    <Content Include="Ar-Bh\images\awareness_campaigns\sonr.jpg" />
+    <Content Include="Ar-Bh\images\awareness_campaigns\TRA-CPS-Guide.jpg" />
+    <Content Include="Ar-Bh\images\awareness_campaigns\TRA-Roaming-Guide.jpg" />
+    <Content Include="Ar-Bh\images\awareness_campaigns\your_sim_your_responsibility.jpg" />
+    <Content Include="Ar-Bh\images\bg-faq.jpg" />
+    <Content Include="Ar-Bh\images\boxon.png" />
+    <Content Include="Ar-Bh\images\case-bg.jpg" />
+    <Content Include="Ar-Bh\images\consumer-pattern.png" />
+    <Content Include="Ar-Bh\images\down_arrow_select.png" />
+    <Content Include="Ar-Bh\images\favicon-retina-ipad.png" />
+    <Content Include="Ar-Bh\images\favicon-retina-iphone.png" />
+    <Content Include="Ar-Bh\images\favicon-standard-ipad.png" />
+    <Content Include="Ar-Bh\images\favicon-standard-iphone.png" />
+    <Content Include="Ar-Bh\images\favicon.png" />
+    <Content Include="Ar-Bh\images\icons\advisory.png" />
+    <Content Include="Ar-Bh\images\icons\business-user.png" />
+    <Content Include="Ar-Bh\images\icons\campaigns.png" />
+    <Content Include="Ar-Bh\images\icons\complaint-process.png" />
+    <Content Include="Ar-Bh\images\icons\complaints.png" />
+    <Content Include="Ar-Bh\images\icons\consultation.png" />
+    <Content Include="Ar-Bh\images\icons\consumer-login.png" />
+    <Content Include="Ar-Bh\images\icons\entity.png" />
+    <Content Include="Ar-Bh\images\icons\faq.png" />
+    <Content Include="Ar-Bh\images\icons\fax.png" />
+    <Content Include="Ar-Bh\images\icons\globe.png" />
+    <Content Include="Ar-Bh\images\icons\individual.png" />
+    <Content Include="Ar-Bh\images\icons\licensing.png" />
+    <Content Include="Ar-Bh\images\icons\login.png" />
+    <Content Include="Ar-Bh\images\icons\mail.png" />
+    <Content Include="Ar-Bh\images\icons\make-complaint.png" />
+    <Content Include="Ar-Bh\images\icons\mobile-subscribers.png" />
+    <Content Include="Ar-Bh\images\icons\numbering.png" />
+    <Content Include="Ar-Bh\images\icons\pdf.png" />
+    <Content Include="Ar-Bh\images\icons\phone-g.png" />
+    <Content Include="Ar-Bh\images\icons\phone.png" />
+    <Content Include="Ar-Bh\images\icons\spectrum-management.png" />
+    <Content Include="Ar-Bh\images\icons\submit-complaint.png" />
+    <Content Include="Ar-Bh\images\icons\telecom-utility-infrastructure.png" />
+    <Content Include="Ar-Bh\images\icons\tips.png" />
+    <Content Include="Ar-Bh\images\icons\type-approval.png" />
+    <Content Include="Ar-Bh\images\icons\yt-play.png" />
+    <Content Include="Ar-Bh\images\loader.gif" />
+    <Content Include="Ar-Bh\images\login-bg.jpg" />
+    <Content Include="Ar-Bh\images\profilepic-TRA.png" />
+    <Content Include="Ar-Bh\images\profilepic.png" />
+    <Content Include="Ar-Bh\images\progressbar.png" />
+    <Content Include="Ar-Bh\images\sideimg-mask-top.png" />
+    <Content Include="Ar-Bh\images\sideimg-mask.png" />
+    <Content Include="Ar-Bh\images\slider\banner1.jpg" />
+    <Content Include="Ar-Bh\images\svg\b-user.svg" />
+    <Content Include="Ar-Bh\images\svg\complaint.svg" />
+    <Content Include="Ar-Bh\images\svg\enquiry.svg" />
+    <Content Include="Ar-Bh\images\svg\gov-entity.svg" />
+    <Content Include="Ar-Bh\images\svg\individual.svg" />
+    <Content Include="Ar-Bh\images\svg\suggestion.svg" />
+    <Content Include="Ar-Bh\images\tra-logo-inverse.png" />
+    <Content Include="Ar-Bh\images\TRA-logo.png" />
+    <Content Include="Ar-Bh\images\TRA-sticky-logo.png" />
+    <Content Include="Ar-Bh\images\video-thumb.jpg" />
+    <Content Include="Ar-Bh\js\bootstrap-datetimepicker.ar.js" />
+    <Content Include="Ar-Bh\js\bootstrap-datetimepicker.js" />
+    <Content Include="Ar-Bh\js\bootstrap.min.js" />
+    <Content Include="Ar-Bh\js\bootstrapvalidator.min.js" />
+    <Content Include="Ar-Bh\js\dataTables.bootstrap.min.js" />
+    <Content Include="Ar-Bh\js\dropzone.js" />
+    <Content Include="Ar-Bh\js\extensions\index.php" />
+    <Content Include="Ar-Bh\js\extensions\revolution.extension.actions.min.js" />
+    <Content Include="Ar-Bh\js\extensions\revolution.extension.carousel.min.js" />
+    <Content Include="Ar-Bh\js\extensions\revolution.extension.kenburn.min.js" />
+    <Content Include="Ar-Bh\js\extensions\revolution.extension.layeranimation.min.js" />
+    <Content Include="Ar-Bh\js\extensions\revolution.extension.migration.min.js" />
+    <Content Include="Ar-Bh\js\extensions\revolution.extension.navigation.min.js" />
+    <Content Include="Ar-Bh\js\extensions\revolution.extension.parallax.min.js" />
+    <Content Include="Ar-Bh\js\extensions\revolution.extension.slideanims.min.js" />
+    <Content Include="Ar-Bh\js\extensions\revolution.extension.video.min.js" />
+    <Content Include="Ar-Bh\js\extensions\source\index.php" />
+    <Content Include="Ar-Bh\js\extensions\source\revolution.extension.actions.js" />
+    <Content Include="Ar-Bh\js\extensions\source\revolution.extension.carousel.js" />
+    <Content Include="Ar-Bh\js\extensions\source\revolution.extension.kenburn.js" />
+    <Content Include="Ar-Bh\js\extensions\source\revolution.extension.layeranimation.js" />
+    <Content Include="Ar-Bh\js\extensions\source\revolution.extension.migration.js" />
+    <Content Include="Ar-Bh\js\extensions\source\revolution.extension.navigation.js" />
+    <Content Include="Ar-Bh\js\extensions\source\revolution.extension.parallax.js" />
+    <Content Include="Ar-Bh\js\extensions\source\revolution.extension.slideanims.js" />
+    <Content Include="Ar-Bh\js\extensions\source\revolution.extension.video.js" />
+    <Content Include="Ar-Bh\js\feedback.js" />
+    <Content Include="Ar-Bh\js\form.js" />
+    <Content Include="Ar-Bh\js\html5shiv.min.js" />
+    <Content Include="Ar-Bh\js\iziModal.min.js" />
+    <Content Include="Ar-Bh\js\jquery-1.12.4.min.js" />
+    <Content Include="Ar-Bh\js\jquery-ui.js" />
+    <Content Include="Ar-Bh\js\jquery.dataTables.min.js" />
+    <Content Include="Ar-Bh\js\jquery.easing.1.3.js" />
+    <Content Include="Ar-Bh\js\jquery.fancybox.min.js" />
+    <Content Include="Ar-Bh\js\jquery.matchHeight.js" />
+    <Content Include="Ar-Bh\js\jquery.themepunch.revolution.min.js" />
+    <Content Include="Ar-Bh\js\jquery.themepunch.tools.min.js" />
+    <Content Include="Ar-Bh\js\main.js" />
+    <Content Include="Ar-Bh\js\modernizr.js" />
+    <Content Include="Ar-Bh\js\navik.menu.js" />
+    <Content Include="Ar-Bh\js\promise-polyfill.js" />
+    <Content Include="Ar-Bh\js\respond.min.js" />
+    <Content Include="Ar-Bh\js\scrollreveal.js" />
+    <Content Include="Ar-Bh\js\selectize.js" />
+    <Content Include="Ar-Bh\js\side-nav.js" />
+    <Content Include="Ar-Bh\js\stepform.js" />
+    <Content Include="Ar-Bh\js\sweetalert2.min.js" />
+    <Content Include="Ar-Bh\js\tooltipster-follower.js" />
+    <Content Include="Ar-Bh\js\tooltipster.bundle.min.js" />
+    <Content Include="Ar-Bh\TRA_AR.gif" />
+    <Content Include="Ar-Bh\TRA_ICON.gif" />
+    <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\toastr.css" />
+    <Content Include="Content\toastr.min.css" />
+    <Content Include="dist\jquery.maskMoney.js" />
+    <Content Include="dist\jquery.maskMoney.min.js" />
+    <Content Include="en-US\assets\c3\c3.css" />
+    <Content Include="en-US\assets\c3\c3.min.js" />
+    <Content Include="en-US\assets\c3\d3.min.js" />
+    <Content Include="en-US\assets\owlcarousel\assets\ajax-loader.gif" />
+    <Content Include="en-US\assets\owlcarousel\assets\owl.carousel.css" />
+    <Content Include="en-US\assets\owlcarousel\assets\owl.carousel.min.css" />
+    <Content Include="en-US\assets\owlcarousel\assets\owl.theme.default.css" />
+    <Content Include="en-US\assets\owlcarousel\assets\owl.theme.default.min.css" />
+    <Content Include="en-US\assets\owlcarousel\assets\owl.theme.green.css" />
+    <Content Include="en-US\assets\owlcarousel\assets\owl.theme.green.min.css" />
+    <Content Include="en-US\assets\owlcarousel\assets\owl.video.play.png" />
+    <Content Include="en-US\assets\owlcarousel\owl.carousel.js" />
+    <Content Include="en-US\assets\owlcarousel\owl.carousel.min.js" />
+    <Content Include="en-US\Consumer\casedetails.html" />
+    <Content Include="en-US\Consumer\createCase.html" />
+    <Content Include="en-US\Consumer\dashboard.html" />
+    <Content Include="en-US\Consumer\error.html" />
+    <Content Include="en-US\Consumer\index.html" />
+    <Content Include="en-US\Consumer\my-profile.html" />
+    <Content Include="en-US\Consumer\my_cases.html" />
+    <Content Include="en-US\css\bootstrap-datetimepicker.css" />
+    <Content Include="en-US\css\bootstrap-datetimepicker.min.css" />
+    <Content Include="en-US\css\bootstrap-theme.min.css" />
+    <Content Include="en-US\css\bootstrap.min.css" />
+    <Content Include="en-US\css\dataTables.bootstrap.css" />
+    <Content Include="en-US\css\dropzone.css" />
+    <Content Include="en-US\css\flaticon.css" />
+    <Content Include="en-US\css\font-awesome.min.css" />
+    <Content Include="en-US\css\footable.standalone.min.css" />
+    <Content Include="en-US\css\form-style.css" />
+    <Content Include="en-US\css\form-style2.css" />
+    <Content Include="en-US\css\iziModal.css" />
+    <Content Include="en-US\css\jquery-ui.css" />
+    <Content Include="en-US\css\jquery.fancybox.css" />
+    <Content Include="en-US\css\loaderstyle.css" />
+    <Content Include="en-US\css\megamenu.css" />
+    <Content Include="en-US\css\navik.menu.css" />
+    <Content Include="en-US\css\reset.css" />
+    <Content Include="en-US\css\revolution\assets\coloredbg.png" />
+    <Content Include="en-US\css\revolution\assets\gridtile.png" />
+    <Content Include="en-US\css\revolution\assets\gridtile_3x3.png" />
+    <Content Include="en-US\css\revolution\assets\gridtile_3x3_white.png" />
+    <Content Include="en-US\css\revolution\assets\gridtile_white.png" />
+    <Content Include="en-US\css\revolution\assets\loader.gif" />
+    <Content Include="en-US\css\revolution\assets\sources\fb.png" />
+    <Content Include="en-US\css\revolution\assets\sources\fr.png" />
+    <Content Include="en-US\css\revolution\assets\sources\ig.png" />
+    <Content Include="en-US\css\revolution\assets\sources\post.png" />
+    <Content Include="en-US\css\revolution\assets\sources\revolution_slide1.png" />
+    <Content Include="en-US\css\revolution\assets\sources\revolution_slide2.png" />
+    <Content Include="en-US\css\revolution\assets\sources\tw.png" />
+    <Content Include="en-US\css\revolution\assets\sources\vm.png" />
+    <Content Include="en-US\css\revolution\assets\sources\wc.png" />
+    <Content Include="en-US\css\revolution\assets\sources\yt.png" />
+    <Content Include="en-US\css\revolution\assets\svg\index.php" />
+    <Content Include="en-US\css\revolution\layers.css" />
+    <Content Include="en-US\css\revolution\navigation.css" />
+    <Content Include="en-US\css\revolution\settings.css" />
+    <Content Include="en-US\css\selectize.default.css" />
+    <Content Include="en-US\css\style.css" />
+    <Content Include="en-US\css\sweetalert2.css" />
+    <Content Include="en-US\css\tooltipcss.css" />
+    <Content Include="en-US\css\tooltipster-follower.css" />
+    <Content Include="en-US\css\tooltipster-sideTip-shadow.min.css" />
+    <Content Include="en-US\css\tooltipster.bundle.css" />
+    <Content Include="en-US\errorcss\style.css" />
+    <Content Include="en-US\fonts\FamiliarPro-Bold.svg" />
+    <Content Include="en-US\fonts\FamiliarPro-Regular.svg" />
+    <Content Include="en-US\fonts\flaticon.svg" />
+    <Content Include="en-US\fonts\fontawesome-webfont.svg" />
+    <Content Include="en-US\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="en-US\fonts\LarkeNeue-Regular.svg" />
+    <Content Include="en-US\fonts\LarkeNeueBold-Bold.svg" />
+    <Content Include="en-US\fonts\LarkeNeueThin-Thin.svg" />
+    <Content Include="en-US\images\2030.png" />
+    <Content Include="en-US\images\announcement-bg.png" />
+    <Content Include="en-US\images\awareness_campaigns\contract_awareness_campaign.jpg" />
+    <Content Include="en-US\images\awareness_campaigns\know_your_rights.jpg" />
+    <Content Include="en-US\images\awareness_campaigns\nisr.jpg" />
+    <Content Include="en-US\images\awareness_campaigns\nisr_executive.jpg" />
+    <Content Include="en-US\images\awareness_campaigns\resolve_issues_with_your_telecom.jpg" />
+    <Content Include="en-US\images\awareness_campaigns\roaming_awareness.jpg" />
+    <Content Include="en-US\images\awareness_campaigns\safesurf.jpg" />
+    <Content Include="en-US\images\awareness_campaigns\sonr.jpg" />
+    <Content Include="en-US\images\awareness_campaigns\TRA-CPS-Guide.jpg" />
+    <Content Include="en-US\images\awareness_campaigns\TRA-Roaming-Guide.jpg" />
+    <Content Include="en-US\images\awareness_campaigns\your_sim_your_responsibility.jpg" />
+    <Content Include="en-US\images\bg-faq.jpg" />
+    <Content Include="en-US\images\boxon.png" />
+    <Content Include="en-US\images\case-bg.jpg" />
+    <Content Include="en-US\images\consumer-pattern.png" />
+    <Content Include="en-US\images\down_arrow_select.png" />
+    <Content Include="en-US\images\favicon-retina-ipad.png" />
+    <Content Include="en-US\images\favicon-retina-iphone.png" />
+    <Content Include="en-US\images\favicon-standard-ipad.png" />
+    <Content Include="en-US\images\favicon-standard-iphone.png" />
+    <Content Include="en-US\images\favicon.png" />
+    <Content Include="en-US\images\icons\advisory.png" />
+    <Content Include="en-US\images\icons\business-user.png" />
+    <Content Include="en-US\images\icons\campaigns.png" />
+    <Content Include="en-US\images\icons\complaint-process.png" />
+    <Content Include="en-US\images\icons\complaints.png" />
+    <Content Include="en-US\images\icons\consultation.png" />
+    <Content Include="en-US\images\icons\consumer-login.png" />
+    <Content Include="en-US\images\icons\entity.png" />
+    <Content Include="en-US\images\icons\faq.png" />
+    <Content Include="en-US\images\icons\fax.png" />
+    <Content Include="en-US\images\icons\globe.png" />
+    <Content Include="en-US\images\icons\individual.png" />
+    <Content Include="en-US\images\icons\licensing.png" />
+    <Content Include="en-US\images\icons\login.png" />
+    <Content Include="en-US\images\icons\mail.png" />
+    <Content Include="en-US\images\icons\make-complaint.png" />
+    <Content Include="en-US\images\icons\mobile-subscribers.png" />
+    <Content Include="en-US\images\icons\numbering.png" />
+    <Content Include="en-US\images\icons\pdf.png" />
+    <Content Include="en-US\images\icons\phone-g.png" />
+    <Content Include="en-US\images\icons\phone.png" />
+    <Content Include="en-US\images\icons\spectrum-management.png" />
+    <Content Include="en-US\images\icons\submit-complaint.png" />
+    <Content Include="en-US\images\icons\telecom-utility-infrastructure.png" />
+    <Content Include="en-US\images\icons\tips.png" />
+    <Content Include="en-US\images\icons\type-approval.png" />
+    <Content Include="en-US\images\icons\yt-play.png" />
+    <Content Include="en-US\images\loader.gif" />
+    <Content Include="en-US\images\login-bg.jpg" />
+    <Content Include="en-US\images\profilepic-TRA.png" />
+    <Content Include="en-US\images\profilepic.png" />
+    <Content Include="en-US\images\progressbar.png" />
+    <Content Include="en-US\images\sideimg-mask-top.png" />
+    <Content Include="en-US\images\sideimg-mask.png" />
+    <Content Include="en-US\images\slider\banner1.jpg" />
+    <Content Include="en-US\images\svg\b-user.svg" />
+    <Content Include="en-US\images\svg\complaint.svg" />
+    <Content Include="en-US\images\svg\enquiry.svg" />
+    <Content Include="en-US\images\svg\gov-entity.svg" />
+    <Content Include="en-US\images\svg\individual.svg" />
+    <Content Include="en-US\images\svg\suggestion.svg" />
+    <Content Include="en-US\images\tra-logo-inverse.png" />
+    <Content Include="en-US\images\TRA-logo.png" />
+    <Content Include="en-US\images\TRA-sticky-logo.png" />
+    <Content Include="en-US\images\video-thumb.jpg" />
+    <Content Include="en-US\img\emoji.png" />
+    <Content Include="en-US\js\bootstrap-datetimepicker.js" />
+    <Content Include="en-US\js\bootstrap.min.js" />
+    <Content Include="en-US\js\bootstrapvalidator.min.js" />
+    <Content Include="en-US\js\dataTables.bootstrap.min.js" />
+    <Content Include="en-US\js\dropzone.js" />
+    <Content Include="en-US\js\extensions\index.php" />
+    <Content Include="en-US\js\extensions\revolution.extension.actions.min.js" />
+    <Content Include="en-US\js\extensions\revolution.extension.carousel.min.js" />
+    <Content Include="en-US\js\extensions\revolution.extension.kenburn.min.js" />
+    <Content Include="en-US\js\extensions\revolution.extension.layeranimation.min.js" />
+    <Content Include="en-US\js\extensions\revolution.extension.migration.min.js" />
+    <Content Include="en-US\js\extensions\revolution.extension.navigation.min.js" />
+    <Content Include="en-US\js\extensions\revolution.extension.parallax.min.js" />
+    <Content Include="en-US\js\extensions\revolution.extension.slideanims.min.js" />
+    <Content Include="en-US\js\extensions\revolution.extension.video.min.js" />
+    <Content Include="en-US\js\extensions\source\index.php" />
+    <Content Include="en-US\js\extensions\source\revolution.extension.actions.js" />
+    <Content Include="en-US\js\extensions\source\revolution.extension.carousel.js" />
+    <Content Include="en-US\js\extensions\source\revolution.extension.kenburn.js" />
+    <Content Include="en-US\js\extensions\source\revolution.extension.layeranimation.js" />
+    <Content Include="en-US\js\extensions\source\revolution.extension.migration.js" />
+    <Content Include="en-US\js\extensions\source\revolution.extension.navigation.js" />
+    <Content Include="en-US\js\extensions\source\revolution.extension.parallax.js" />
+    <Content Include="en-US\js\extensions\source\revolution.extension.slideanims.js" />
+    <Content Include="en-US\js\extensions\source\revolution.extension.video.js" />
+    <Content Include="en-US\js\feedback.js" />
+    <Content Include="en-US\js\form.js" />
+    <Content Include="en-US\js\html5shiv.min.js" />
+    <Content Include="en-US\js\iziModal.min.js" />
+    <Content Include="en-US\js\jquery-1.12.4.min.js" />
+    <Content Include="en-US\js\jquery-ui.js" />
+    <Content Include="en-US\js\jquery.dataTables.min.js" />
+    <Content Include="en-US\js\jquery.easing.1.3.js" />
+    <Content Include="en-US\js\jquery.fancybox.min.js" />
+    <Content Include="en-US\js\jquery.matchHeight.js" />
+    <Content Include="en-US\js\jquery.themepunch.revolution.min.js" />
+    <Content Include="en-US\js\jquery.themepunch.tools.min.js" />
+    <Content Include="en-US\js\main.js" />
+    <Content Include="en-US\js\modernizr.js" />
+    <Content Include="en-US\js\navik.menu.js" />
+    <Content Include="en-US\js\promise-polyfill.js" />
+    <Content Include="en-US\js\respond.min.js" />
+    <Content Include="en-US\js\scrollreveal.js" />
+    <Content Include="en-US\js\selectize.js" />
+    <Content Include="en-US\js\side-nav.js" />
+    <Content Include="en-US\js\stepform.js" />
+    <Content Include="en-US\js\sweetalert2.min.js" />
+    <Content Include="en-US\js\tooltipster-follower.js" />
+    <Content Include="en-US\js\tooltipster.bundle.min.js" />
+    <Content Include="en-US\TRA_EN.gif" />
+    <Content Include="en-US\TRA_ICON.gif" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="JavaScript.js" />
+    <Content Include="Scripts\alert.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\HelpPage\Views\Web.config" />
+    <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\ResourceModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Index.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\TextSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\SimpleTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Samples.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Parameters.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ModelDescriptionLink.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\KeyValuePairModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\InvalidSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ImageSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\EnumTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\DictionaryModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ComplexTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <Content Include="en-US\.DS_Store" />
+    <Content Include="en-US\assets\.DS_Store" />
+    <Content Include="en-US\assets\c3\.DS_Store" />
+    <Content Include="en-US\assets\owlcarousel\.DS_Store" />
+    <Content Include="en-US\assets\owlcarousel\assets\.DS_Store" />
+    <Content Include="en-US\css\.DS_Store" />
+    <Content Include="en-US\css\revolution\.DS_Store" />
+    <Content Include="en-US\css\revolution\assets\.DS_Store" />
+    <Content Include="en-US\css\revolution\assets\svg\svg.zip" />
+    <Content Include="en-US\fonts\.DS_Store" />
+    <Content Include="en-US\fonts\FamiliarPro-Bold.eot" />
+    <Content Include="en-US\fonts\FamiliarPro-Bold.ttf" />
+    <Content Include="en-US\fonts\FamiliarPro-Bold.woff" />
+    <Content Include="en-US\fonts\FamiliarPro-Bold.woff2" />
+    <Content Include="en-US\fonts\FamiliarPro-Regular.eot" />
+    <Content Include="en-US\fonts\FamiliarPro-Regular.ttf" />
+    <Content Include="en-US\fonts\FamiliarPro-Regular.woff" />
+    <Content Include="en-US\fonts\FamiliarPro-Regular.woff2" />
+    <Content Include="en-US\fonts\flaticon.eot" />
+    <Content Include="en-US\fonts\flaticon.ttf" />
+    <Content Include="en-US\fonts\flaticon.woff" />
+    <Content Include="en-US\fonts\fontawesome-webfont.eot" />
+    <Content Include="en-US\fonts\fontawesome-webfont.ttf" />
+    <Content Include="en-US\fonts\fontawesome-webfont.woff" />
+    <Content Include="en-US\fonts\fontawesome-webfont.woff2" />
+    <Content Include="en-US\fonts\FontAwesome.otf" />
+    <Content Include="en-US\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="en-US\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="en-US\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="en-US\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="en-US\fonts\LarkeNeue-Regular.eot" />
+    <Content Include="en-US\fonts\LarkeNeue-Regular.ttf" />
+    <Content Include="en-US\fonts\LarkeNeue-Regular.woff" />
+    <Content Include="en-US\fonts\LarkeNeue-Regular.woff2" />
+    <Content Include="en-US\fonts\LarkeNeueBold-Bold.eot" />
+    <Content Include="en-US\fonts\LarkeNeueBold-Bold.ttf" />
+    <Content Include="en-US\fonts\LarkeNeueBold-Bold.woff" />
+    <Content Include="en-US\fonts\LarkeNeueBold-Bold.woff2" />
+    <Content Include="en-US\fonts\LarkeNeueThin-Thin.eot" />
+    <Content Include="en-US\fonts\LarkeNeueThin-Thin.ttf" />
+    <Content Include="en-US\fonts\LarkeNeueThin-Thin.woff" />
+    <Content Include="en-US\fonts\LarkeNeueThin-Thin.woff2" />
+    <Content Include="en-US\images\.DS_Store" />
+    <Content Include="en-US\images\awareness_campaigns\.DS_Store" />
+    <Content Include="en-US\images\icons\.DS_Store" />
+    <Content Include="en-US\images\slider\.DS_Store" />
+    <Content Include="en-US\images\svg\.DS_Store" />
+    <Content Include="en-US\js\.DS_Store" />
+    <Content Include="en-US\js\extensions\.DS_Store" />
+    <Content Include="Ar-Bh\assets\.DS_Store" />
+    <Content Include="Ar-Bh\assets\c3\.DS_Store" />
+    <Content Include="Ar-Bh\assets\owlcarousel\.DS_Store" />
+    <Content Include="Ar-Bh\assets\owlcarousel\assets\.DS_Store" />
+    <Content Include="Ar-Bh\css\.DS_Store" />
+    <Content Include="Ar-Bh\css\revolution\.DS_Store" />
+    <Content Include="Ar-Bh\css\revolution\assets\.DS_Store" />
+    <Content Include="Ar-Bh\css\revolution\assets\svg\svg.zip" />
+    <Content Include="Ar-Bh\fonts\.DS_Store" />
+    <Content Include="Ar-Bh\fonts\FamiliarPro-Bold.eot" />
+    <Content Include="Ar-Bh\fonts\FamiliarPro-Bold.ttf" />
+    <Content Include="Ar-Bh\fonts\FamiliarPro-Bold.woff" />
+    <Content Include="Ar-Bh\fonts\FamiliarPro-Bold.woff2" />
+    <Content Include="Ar-Bh\fonts\FamiliarPro-Regular.eot" />
+    <Content Include="Ar-Bh\fonts\FamiliarPro-Regular.ttf" />
+    <Content Include="Ar-Bh\fonts\FamiliarPro-Regular.woff" />
+    <Content Include="Ar-Bh\fonts\FamiliarPro-Regular.woff2" />
+    <Content Include="Ar-Bh\fonts\flaticon.eot" />
+    <Content Include="Ar-Bh\fonts\flaticon.ttf" />
+    <Content Include="Ar-Bh\fonts\flaticon.woff" />
+    <Content Include="Ar-Bh\fonts\fontawesome-webfont.eot" />
+    <Content Include="Ar-Bh\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Ar-Bh\fonts\fontawesome-webfont.woff" />
+    <Content Include="Ar-Bh\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Ar-Bh\fonts\FontAwesome.otf" />
+    <Content Include="Ar-Bh\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Ar-Bh\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Ar-Bh\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Ar-Bh\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Ar-Bh\fonts\LarkeNeue-Regular.eot" />
+    <Content Include="Ar-Bh\fonts\LarkeNeue-Regular.ttf" />
+    <Content Include="Ar-Bh\fonts\LarkeNeue-Regular.woff" />
+    <Content Include="Ar-Bh\fonts\LarkeNeue-Regular.woff2" />
+    <Content Include="Ar-Bh\fonts\LarkeNeueBold-Bold.eot" />
+    <Content Include="Ar-Bh\fonts\LarkeNeueBold-Bold.ttf" />
+    <Content Include="Ar-Bh\fonts\LarkeNeueBold-Bold.woff" />
+    <Content Include="Ar-Bh\fonts\LarkeNeueBold-Bold.woff2" />
+    <Content Include="Ar-Bh\fonts\LarkeNeueThin-Thin.eot" />
+    <Content Include="Ar-Bh\fonts\LarkeNeueThin-Thin.ttf" />
+    <Content Include="Ar-Bh\fonts\LarkeNeueThin-Thin.woff" />
+    <Content Include="Ar-Bh\fonts\LarkeNeueThin-Thin.woff2" />
+    <Content Include="Ar-Bh\fonts\NotoKufiArabic-Bold.eot" />
+    <Content Include="Ar-Bh\fonts\NotoKufiArabic-Bold.ttf" />
+    <Content Include="Ar-Bh\fonts\NotoKufiArabic-Bold.woff" />
+    <Content Include="Ar-Bh\fonts\NotoKufiArabic-Bold.woff2" />
+    <Content Include="Ar-Bh\fonts\NotoKufiArabic-Regular.eot" />
+    <Content Include="Ar-Bh\fonts\NotoKufiArabic-Regular.ttf" />
+    <Content Include="Ar-Bh\fonts\NotoKufiArabic-Regular.woff" />
+    <Content Include="Ar-Bh\fonts\NotoKufiArabic-Regular.woff2" />
+    <Content Include="Ar-Bh\images\.DS_Store" />
+    <Content Include="Ar-Bh\images\awareness_campaigns\.DS_Store" />
+    <Content Include="Ar-Bh\images\icons\.DS_Store" />
+    <Content Include="Ar-Bh\images\slider\.DS_Store" />
+    <Content Include="Ar-Bh\images\svg\.DS_Store" />
+    <Content Include="Ar-Bh\js\.DS_Store" />
+    <Content Include="Ar-Bh\js\extensions\.DS_Store" />
+    <Content Include="Content\toastr.scss" />
+    <Content Include="Content\toastr.less" />
+    <Content Include="en-US\Consumer\registerConsumer.cshtml" />
+    <Content Include="en-US\Consumer\consumer-consent.cshtml" />
+    <Content Include="en-US\Consumer\document-request.cshtml" />
+    <Content Include="en-US\Consumer\consumer-survey.cshtml" />
+    <Content Include="en-US\Consumer\forgot-password.cshtml" />
+    <Content Include="Ar-Bh\Consumer\registerConsumer.cshtml" />
+    <Content Include="Ar-Bh\Consumer\consumer-consent.cshtml" />
+    <Content Include="Ar-Bh\Consumer\consumer-survey.cshtml" />
+    <Content Include="Ar-Bh\Consumer\document-request.cshtml" />
+    <Content Include="Ar-Bh\Consumer\forgot-password.cshtml" />
+    <Content Include="en-US\Consumer\fixedprobs.cshtml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\dropzone\basic.css" />
+    <Content Include="Scripts\dropzone\basic.min.css" />
+    <Content Include="Scripts\dropzone\dropzone-amd-module.js" />
+    <Content Include="Scripts\dropzone\dropzone-amd-module.min.js" />
+    <Content Include="Scripts\dropzone\dropzone.css" />
+    <Content Include="Scripts\dropzone\dropzone.js" />
+    <Content Include="Scripts\dropzone\dropzone.min.css" />
+    <Content Include="Scripts\dropzone\dropzone.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.blockUI.js" />
+    <Content Include="Scripts\jquery.password-strength-2.0.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\passwordStrength.js" />
+    <Content Include="signature-pad-master\assets\flashcanvas.js" />
+    <Content Include="signature-pad-master\assets\flashcanvas.swf" />
+    <Content Include="signature-pad-master\assets\journal.svg" />
+    <Content Include="signature-pad-master\assets\jquery.signaturepad.css" />
+    <Content Include="signature-pad-master\assets\json2.min.js" />
+    <Content Include="signature-pad-master\assets\pen.cur" />
+    <Content Include="signature-pad-master\examples\accept-multiple-signatures.html" />
+    <Content Include="signature-pad-master\examples\accept-signature.html" />
+    <Content Include="signature-pad-master\examples\full-window.html" />
+    <Content Include="signature-pad-master\examples\regenerate-signature.html" />
+    <Content Include="signature-pad-master\examples\require-drawn-signature.html" />
+    <Content Include="signature-pad-master\examples\sample-signature-output.js" />
+    <Content Include="signature-pad-master\jquery.signaturepad.js" />
+    <Content Include="signature-pad-master\jquery.signaturepad.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\testpage1.cshtml" />
+    <Content Include="Views\Home\testpage2.cshtml" />
+    <Content Include="signature-pad-master\.editorconfig" />
+    <Content Include="signature-pad-master\.gitignore" />
+    <Content Include="signature-pad-master\.jshintrc" />
+    <Content Include="signature-pad-master\.nojekyll" />
+    <Content Include="signature-pad-master\assets\journal.eot" />
+    <Content Include="signature-pad-master\assets\journal.ttf" />
+    <Content Include="signature-pad-master\assets\journal.woff" />
+    <Content Include="signature-pad-master\CHANGELOG.md" />
+    <Content Include="signature-pad-master\documentation.md" />
+    <Content Include="signature-pad-master\Gruntfile.coffee" />
+    <Content Include="signature-pad-master\LICENSE" />
+    <Content Include="signature-pad-master\package.json" />
+    <Content Include="signature-pad-master\pen.psd" />
+    <Content Include="signature-pad-master\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\EnglishConsumer\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.min.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>59179</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44300/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

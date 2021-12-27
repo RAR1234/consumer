@@ -1,0 +1,734 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="robots" content="index, follow" />
+    <meta name="keywords" content="TRA, Bahrain telecommunications, telecom consumer dispute, telecom complaints, submit complaint, consumer portal" />
+    <meta name="description" content="Maintaining effective communication between TRA, consumers and the telecommunications service providers." />
+
+    <!-- ================= Favicons ================== -->
+    <!-- Standard -->
+    <link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link rel="shortcut icon" href="images/favicon.png">
+    <!-- Retina iPad Touch Icon-->
+    <link rel="apple-touch-icon" sizes="144x144" href="../images/favicon-retina-ipad.png">
+    <!-- Retina iPhone Touch Icon-->
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/favicon-retina-iphone.png">
+    <!-- Standard iPad Touch Icon-->
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/favicon-standard-ipad.png">
+    <!-- Standard iPhone Touch Icon-->
+    <link rel="apple-touch-icon" sizes="57x57" href="../images/favicon-standard-iphone.png">
+    <title>Document Request  - Consumer Portal | Telecommunications Regulatory Authority, Kingdom of Bahrain</title>
+
+    <!--=============== css  ===============-->
+    <!-- Reset CSS -->
+    <link href="../css/reset.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap-theme.min.css" rel="stylesheet">
+    <!-- jQuery UI -->
+    <link rel="stylesheet" type="text/css" href="../css/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="../css/dataTables.bootstrap.css">
+
+    <!-- Main CSS -->
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/form-style.css" rel="stylesheet">
+    <link href="../css/form-style2.css" rel="stylesheet">
+
+    <!-- Selectize -->
+    <link rel="stylesheet" href="../css/selectize.default.css">
+
+    <!--<link href="css/style-02.css" rel="stylesheet">-->
+    <link href="../css/megamenu.css" rel="stylesheet">
+    <link href="../css/navik.menu.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/flaticon.css" rel="stylesheet">
+
+    <!-- Owl Stylesheets -->
+    <link rel="stylesheet" href="../assets/owlcarousel/assets/owl.carousel.min.css">
+    <!--<link rel="stylesheet" href="assets/owlcarousel/assets/owl.theme.default.min.css">-->
+    <!-- FancyBox -->
+    <link href="../css/jquery.fancybox.css" rel="stylesheet">
+
+    <!-- DateTime Picker -->
+    <link href="../css/bootstrap-datetimepicker.css" rel="stylesheet">
+
+    <!-- Sweet Alert -->
+    <link rel="stylesheet" href="../css/sweetalert2.css">
+
+    <!-- Dropzone -->
+    <link rel="stylesheet" href="../css/dropzone.css">
+
+    <!-- Tooltip -->
+    <link rel="stylesheet" type="text/css" href="../css/tooltipster.bundle.css" />
+    <link rel="stylesheet" type="text/css" href="../css/tooltipster-follower.css" />
+    <link rel="stylesheet" type="text/css" href="../css/tooltipster-sideTip-shadow.min.css" />
+
+    <style type="text/css">
+        .overlay {
+            position: fixed;
+            top: 0;
+            display: none;
+            z-index: 1000;
+            height: 100%;
+            background: rgba(33, 33, 33, 0.6);
+            width: 100%;
+        }
+
+        #spnId {
+            top: 45%;
+            left: 45%;
+            position: fixed;
+        }
+
+        .case-status-wrapper {
+            display: block !important;
+        }
+    </style>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+          <script src="js/html5shiv.min.js"></script>
+          <script src="js/respond.min.js"></script>
+        <![endif]-->
+    <!--[if gte IE 9]
+        <style type="text/css"> .gradient { filter: none; } </style>
+        <![endif]-->
+
+    <script src="../js/modernizr.js"></script> <!-- Modernizr runs quickly on page load to detect features -->
+    <script src="../js/scrollreveal.js"></script> <!-- ScrollReveal -->
+
+</head>
+
+<body>
+
+    <!-- *** LOADING *** -->
+    <!-- Clean fade-in effect for webpage -->
+    <script>document.body.className += ' fade-out';</script>
+
+    <!-- *** / LOADING *** -->
+
+    <div id="page d-flex align-items-stretch">
+
+        <!--==============================================
+            Header Area
+        ===============================================-->
+
+        <div class="cd-main-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul class="cd-header-buttons">
+                            <li><a class="hotline" href="tel:81188"><span class="hotlinenumber">81188</span> <span class="des">(Consumer Contact Center)</span></a></li>
+                            <li><a class="language-switch" href="~/Ar-Bh/Consumer/index.html">عربي</a></li>
+                        </ul>
+                        <!-- cd-header-buttons -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="navik-header header-shadow navik-mega-menu mega-menu-fullwidth">
+            <div class="container">
+
+                <!-- Navik header -->
+                <div class="navik-header-container">
+
+                    <!--Logo-->
+                    <div class="logo" data-mobile-logo="../images/TRA-logo.png" data-sticky-logo="../images/TRA-sticky-logo.png"> <a href="index.html"><img src="../images/TRA-logo.png" alt="TRA logo" /></a> </div>
+                </div>
+            </div>
+        </div>
+        <main>
+
+            <section class="formsection">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="formcontainer">
+                                <div class="row">
+                                    @{
+
+                                        @Html.Hidden("app", Html.Raw(System.Configuration.ConfigurationManager.AppSettings["basicAuth"]))
+
+                                    }
+                                    <div class="col-md-12">
+                                        <div class="main-title">
+                                            <div class="icon-case"><span class="fa fa-file-text-o"></span></div>
+                                            <h2 class="fs-title text-center mb20">Document Request</h2>
+                                            <h4 class="text-center pb0">Case Reference Number: <span id="caseNo"></span></h4>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 pb30">
+                                        <div class="case-status-wrapper">
+                                            <ul class="case-status-list">
+                                                <li>Date Submitted: <span id="dateOfSubmits"></span></li>
+                                                <li>Type of Case: <span id="caseType"></span></li>
+
+                                            </ul>
+                                            <h4 class="mb10">Case Description</h4>
+                                            <p id="descriptionCase" style="overflow-wrap: break-word;"></p>
+                                            <p class="pb0"><strong>Files Attached:</strong></p>
+                                            <ul class="uploaded-file-list" id="fileDownloadul">
+                                            </ul>
+                                            <hr class="border2">
+                                        </div>
+                                        <form class="msform">
+                                            <div class="formwrapper mb0">
+                                                <div class="col-md-12">
+                                                    <h4 class="mb20">Attach Missing Document</h4>
+                                                    <div class="form-group mb30">
+                                                        <div class="submitcomment">
+
+                                                            <!--On click of the attach files button this will show-->
+                                                            <div class="attachment-box">
+                                                                <div class="small mb10">
+                                                                    Please note that only the following file types of maximum 2MB will be accepted as attachments:<br>
+                                                                    <strong>(.jpg, .jpeg, .png, .bmp, .gif, .doc, .docx, .pdf)</strong>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <div action="#" class="dropzone multipleFile" id="fileUploaddiv" mandatory>
+                                                                        <div class="fallback">
+                                                                            <input name="file" type="file" multiple />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!--End DIV submitcomment-->
+
+                                                    </div>
+
+                                                    <div class="col-md-12 text-center mt15 mb30">
+                                                        <input type="submit" class="submitRequest btn btn-style-4" style="display:none" id="documentSubmitbtn" value="Submit">
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </form>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- END formsection -->
+
+            <div class="clearfix"></div>
+        </main>
+        <!--main -END -->
+        <!--==============================================
+            Footer Section
+        ===============================================-->
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-md-push-4 col-sm-6 col-xs-12">
+                        <ul class="footer-logos">
+                            <li><a href="https://www.bahrain.bh/wps/portal/QuickLinks_en?current=true&urile=wcm:path:egovportal_en/LANDING%20PAGES/Bahrain2030" target="_blank"><img src="../images/2030.png" width="65" height="60" alt="Bahrain 2030"></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 col-md-push-4 col-sm-6 col-xs-12">
+                        <div class="social-txt">Connect with us :</div>
+                        <ul class="social-icons">
+                            <li><a href="https://www.instagram.com/trabahrain/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i><span class="sr-only">TRA Instagram</span></a></li>
+                            <li><a href="https://twitter.com/trabahrain/" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i><span class="sr-only">TRA Twitter</span></a></li>
+                            <li><a href="https://www.facebook.com/trabahrain/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i><span class="sr-only">TRA Facebook</span></a></li>
+                            <li><a href="https://www.youtube.com/channel/UCrJmBEJd1LvLD-jcxIzbidQ/" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i><span class="sr-only">TRA YouTube</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 col-md-pull-8 col-sm-12 col-xs-12">
+                        <p class="copyright">
+                            &copy;
+                            <script type="text/javascript">var d = new Date(); document.write(d.getFullYear());</script> Telecommunications Regulatory Authority<br>
+                            Kingdom of Bahrain.
+                        </p>
+                        <p class="footer-links"><a href="https://www.tra.org.bh/en/en/category/privacy-policy" target="_blank">Privacy Policy</a> / <a href="https://www.tra.org.bh/en/en/en/category/terms-and-conditions" target="_blank">Terms &amp; Conditions</a></p>
+                    </div>
+                </div>
+                <!--.row -END -->
+            </div>
+            <!--.container -END -->
+        </footer>
+        <div class="cd-overlay"></div>
+
+        <div class="modal fade" tabindex="-1" id="viewModal" data-keyboard="false" data-backdrop="static">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h5 class="modal-title">TRA says</h5>
+
+                    </div>
+                    <div class="modal-body">
+                        <p>The documents will now be submitted to the Authority. Do you wish to continue?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" id="modalSubmit">Yes</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="overlay">
+            <div class="spinner-loading" id="spnId"><i class="fa fa-spinner fa-pulse fa-3x fa-fw" aria-hidden="true"></i><span class="sr-only">Loading...</span></div>
+        </div>
+    </div>
+    <!--.page -END -->
+    <!-- JavaScripts
+        ================================================== -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../../Scripts/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="../js/jquery-ui.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrapvalidator.min.js"></script>
+    <!--<script src="js/validator.min.js"></script>-->
+    <!-- Navik Menu js -->
+    <script type="text/javascript" src="../js/navik.menu.js"></script>
+
+    <!-- OwlCarousel js-->
+    <script type="text/javascript" src="../assets/owlcarousel/owl.carousel.js"></script>
+
+    <!-- Fancybox js -->
+    <script type="text/javascript" src="../js/jquery.fancybox.min.js"></script>
+    <script src="../../Scripts/dropzone/dropzone.js"></script>
+    <!-- File Uploader js -->
+    <!--<script src="../../Scripts/dropzone/dropzone.min.js"></script>-->
+    <!-- Custom js -->
+    <script type="text/javascript" src="../js/main.js"></script>
+
+    <!-- Side Nav js -->
+    <script type="text/javascript" src="../js/side-nav.js"></script>
+
+    <!-- Form js -->
+    <script type="text/javascript" src="../js/form.js"></script>
+    <script type="text/javascript" src="../js/stepform.js"></script>
+
+    <!-- DateTime Picker js -->
+    <script type="text/javascript" src="../js/bootstrap-datetimepicker.js"></script>
+    <script>
+        $(document)
+            .ajaxStart(function () {
+                //$('.spinner-loading').show();
+                $(".overlay").show();
+            })
+            .ajaxStop(function () {
+                //   $('.spinner-loading').hide();
+                $(".overlay").hide();
+            });
+    </script>
+    <script type="text/javascript">
+        var strtdt = new Date();
+        strtdt.setFullYear(strtdt.getFullYear() - 16);
+        $('.form_date').datetimepicker({
+            language: 'en',
+            weekStart: 0,
+            todayBtn: 0,
+            autoclose: 1,
+            todayHighlight: 0,
+            keyboardNavigation: true,
+            pickerPosition: "bottom-left",
+            startView: 4,
+            minView: 2,
+            forceParse: 0,
+            endDate: strtdt
+        });
+        $('.complaint_date').datetimepicker({
+            language: 'en',
+            weekStart: 0,
+            todayBtn: 0,
+            autoclose: 1,
+            todayHighlight: 0,
+            keyboardNavigation: true,
+            pickerPosition: "bottom-left",
+            startView: 4,
+            minView: 2,
+            forceParse: 0,
+            endDate: new Date()
+        });
+    </script>
+
+    <!-- Sweetalert js -->
+    <script type="text/javascript" src="../js/sweetalert2.min.js"></script>
+    <script type="text/javascript" src="../js/promise-polyfill.js"></script>
+
+    <!-- Tooltipster js -->
+    <script type="text/javascript" src="../js/tooltipster.bundle.min.js"></script>
+    <script type="text/javascript" src="../js/tooltipster-follower.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.tooltipz').tooltipster({
+                theme: 'tooltipster-shadow',
+                side: 'bottom',
+                trigger: 'click',
+                maxWidth: 300
+            });
+        });
+    </script>
+
+    <script>
+        var queryString = new Array();
+        var caseId;
+        var current_fs;
+        $(function () {
+
+            if (queryString.length == 0) {
+                if (window.location.search.split('?').length > 1) {
+                    var params = window.location.search.split('?')[1].split('&');
+                    for (var i = 0; i < params.length; i++) {
+                        var key = params[i].split('=')[0];
+                        if (key == "caseId") {
+                            caseId = decodeURIComponent(params[i].split('=')[1]);
+                            queryString[key] = caseId;
+                        }
+
+
+                    }
+                }
+            }
+
+            $(document).ready(function () {
+
+                getDocumentsRequest();
+
+
+            });
+
+            function getDocumentsRequest() {
+
+                $.ajax({
+                    type: "GET",
+
+                    url:window.location.origin + "/api/EnglishConsumer/getDocumentRequest?caseId=" + caseId,
+                    headers: {
+                        "Authorization": "Basic " + $("#app").val()
+                    },
+                    datatype: "JSON",
+                    contentType: "application/json",
+
+                    success: function (result) {
+                        if (result != null) {
+
+                            var caseInfo = result._caseData;
+                            if (caseInfo != null) {
+
+                                $("#dateOfSubmits").text(caseInfo.createOn);
+                                $("#caseType").text(caseInfo.caseType);
+                                $("#descriptionCase").text(caseInfo.caseDescription);
+                                $("#caseNo").text(caseInfo.caseNo);
+
+                            }
+
+                            var annotationList = result.listAnnotation;
+                            var fileDownloads = $("#fileDownloadul");
+                            if (annotationList != null && annotationList.length > 0) {
+
+
+                                for (var i = 0; i < annotationList.length; i++) {
+
+                                    if (annotationList[i].filename != "" && annotationList[i].IsportalAttach == true) {
+
+                                        var extension = annotationList[i].filename.substr((annotationList[i].filename.lastIndexOf('.') + 1));
+
+                                        if (extension == "PNG" || extension == "png") {
+                                            var dataSource = '<li><a class="filesDownloadCLS" href="#" anotationId=' + annotationList[i].annotId + ' ><span class="fa fa-file-image-o"></span> ' + annotationList[i].filename + '</a></li>';
+
+                                        }
+
+                                        else if (extension == "gif" || extension == "GIF") {
+                                            var dataSource = '<li><a class="filesDownloadCLS" href="#" anotationId=' + annotationList[i].annotId + ' ><span class="fa fa-file-image-o"></span> ' + annotationList[i].filename + '</a></li>';
+
+                                        }
+                                        else if (extension == "PDF" || extension == "pdf") {
+                                            var dataSource = '<li><a class="filesDownloadCLS" href="#" anotationId=' + annotationList[i].annotId + ' ><span class="fa fa-file-pdf-o"></span> ' + annotationList[i].filename + '</a></li>';
+                                        }
+                                        else if (extension == "DOCX" || extension == "docx") {
+                                            var dataSource = '<li><a class="filesDownloadCLS" href="#" anotationId=' + annotationList[i].annotId + ' ><span class="fa fa-file-word-o"></span> ' + annotationList[i].filename + '</a></li>';
+                                        }
+
+                                        else if (extension == "DOC" || extension == "doc") {
+                                            var dataSource = '<li><a class="filesDownloadCLS" href="#" anotationId=' + annotationList[i].annotId + ' ><span class="fa fa-file-word-o"></span> ' + annotationList[i].filename + '</a></li>';
+                                        }
+                                        else if (extension == "JPG" || extension == "jpg") {
+                                            var dataSource = '<li><a class="filesDownloadCLS" href="#" anotationId=' + annotationList[i].annotId + ' ><span class="fa fa-file-image-o"></span> ' + annotationList[i].filename + '</a></li>';
+                                        }
+
+                                        else {
+                                            var dataSource = '<li><a class="filesDownloadCLS" href="#" anotationId=' + annotationList[i].annotId + ' ><span class="fa fa-file-o"></span> ' + annotationList[i].filename + '</a></li>';
+                                        }
+
+                                        fileDownloads.append(dataSource);
+
+                                    }
+
+                                }
+
+                            }
+                            else {
+                                  var filesData = '<br/><div class="alert alert-warning" role="alert" style="text-align:center">No Files attached.</div>';
+                                fileDownloads.append(filesData);
+                            }
+
+                            ////////////////////////////////////File Download/////////////////////////////////
+                            $(".filesDownloadCLS").bind("click", function () {
+
+                                var annotationId = $(this).attr("anotationId");
+
+
+                                $.ajax({
+
+                                    type: "GET",
+                                    contentType: "application/json;charset=utf-8",
+                                    url:window.location.origin + "/api/EnglishConsumer/downloadConsentFiles?fileId=" + annotationId,
+                                    headers: {
+                                      "Authorization": "Basic " + $("#app").val()
+                                    },
+
+
+                                    dataType: "JSON",
+                                    success: function (data) {
+
+                                        if (data != null) {
+
+                                            var url = "data:" + data.mimeType + ";base64," + data.documentbody;
+                                            var action = document.createElement('a');
+                                            action.style.display = 'none';
+                                            action.setAttribute("href", url);
+                                            action.setAttribute("target", "_blank");
+                                            action.setAttribute("download", data.filename);
+                                            document.body.appendChild(action);
+                                            action.click();
+                                            URL.revokeObjectURL(url);
+                                            action.remove();
+
+                                        }
+
+                                    },
+                                    error: function (jqXHR) {
+                                        if (jqXHR.status == 500) {
+                                            window.location.href = "error.html";
+                                        } else {
+                                            window.location.href = "error.html";
+                                        }
+                                    }
+
+                                })
+
+                            });
+
+
+
+
+
+                        }
+                    },
+                    error: function (jqXHR) {
+
+                        if (jqXHR.status == 500) {
+                            window.location.href = "error.html";
+                        } else {
+                            window.location.href = "error.html";
+                        }
+                    }
+
+                });
+
+            }
+
+        });
+
+        var filesArray = [];
+        Dropzone.autoDiscover = false;
+
+        $("#fileUploaddiv").dropzone({
+
+            autoProcessQueue: false,
+            uploadMultiple: true,
+            maxFiles: 10,
+            maxFilesize: 2,
+            acceptedFiles: '.pdf, .docx, .doc, .png, .jpg, .jpeg, .bmp,.gif, .PDF, .DOCX, .DOC, .PNG, .JPG, .JPEG, .BMP, .GIF',
+            dictDefaultMessage: "Drag and drop files here or click to upload (Multiple files allowed)",
+
+            init: function () {
+
+                var wrapperThis = this;
+
+                this.on("addedfile", function (file) {
+
+                    filesArray.push(file);
+                    $("#documentSubmitbtn").show();
+
+                    var removeButton = Dropzone.createElement("<button class='btn btn-lg dark'>Remove File</button>");
+
+                    removeButton.addEventListener("click", function (e) {
+
+                        e.preventDefault();
+                        e.stopPropagation();
+                        wrapperThis.removeFile(file);
+
+
+                        for (var i = 0; i < filesArray.length; i++) {
+
+
+
+                            if (filesArray[i] == file) {
+                                filesArray.splice(i, 1);
+
+                                if (filesArray.length == 0) {
+                                    $("#documentSubmitbtn").hide();
+                                }
+                            }
+
+
+                        }
+                    });
+
+
+                    file.previewElement.appendChild(removeButton);
+
+
+
+                });
+            }
+
+        });
+
+
+
+        $("#documentSubmitbtn").on("click", function () {
+             current_fs = $(this).parent().parent();
+
+            if (validateinputs(current_fs)) {
+                $("#viewModal").modal("show");
+                return false;
+            }
+            else {
+                return false;
+            }
+
+
+
+        });
+
+        $("#modalSubmit").on("click", function () {
+            $("#viewModal").modal("hide");
+
+            current_fs = $(this).parent().parent();
+
+            if (validateinputs(current_fs)) {
+
+                var formData = new FormData();
+
+                for (var p = 0; p < filesArray.length; p++) {
+
+                    formData.append("file" + p, filesArray[p]);
+                }
+
+                formData.append("caseId", caseId);
+
+                if (formData != null) {
+
+                    $.ajax({
+
+                        type: "POST",
+
+
+                        url:window.location.origin + '/api/EnglishConsumer/postDocumentRequest',
+                        headers: {
+                           "Authorization": "Basic " + $("#app").val()
+                        },
+
+                        data: formData,
+                        contentType: false,
+                        processData: false,
+
+                        success: function (result) {
+
+
+                            if (result.errorCode == 200) {
+
+                                successFiles();
+
+
+                            }
+                            else if (result.errorCode == 400) {
+
+                                window.location.href = "error.html";
+                            }
+                        }, error: function (jqXHR) {
+                            if (jqXHR.status == 500) {
+                                window.location.href = "error.html";
+                            } else {
+                                window.location.href = "error.html";
+                            }
+
+                        }
+
+                    });
+
+                }
+                return false;
+            }
+            else {
+                return false;
+            }
+        })
+
+        function successFiles() {
+
+            current_fs = $(this).parent().parent();
+
+            if (validateinputs(current_fs)) {
+
+                Swal.fire({
+
+                    icon: 'success',
+                    title: 'Success!',
+                    confirmButtonText: 'Ok',
+                    showCancelButton: false,
+                    cancelButtonText: 'Go to Dashboard',
+
+                    html:
+                        '<p>Your documents have been uploaded successfully.</p>'
+                }).then(function (result) {
+
+                    if (result.dismiss == 'cancel') {
+
+                    }
+                    else {
+                        window.location.href =window.location.origin + "/en-US/Consumer/index.html";
+                    }
+                })
+            }
+            return false;
+        };
+
+
+    </script>
+
+
+    <!-- Smiley Feedback js -->
+    <script type="text/javascript" src="../js/feedback.js"></script>
+
+    <!-- Clean fade-in effect for webpage -->
+    <script type="text/javascript">
+        $(function () {
+            $('body').removeClass('fade-out');
+        });
+    </script>
+</body>
+</html>

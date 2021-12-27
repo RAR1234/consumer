@@ -1,0 +1,781 @@
+﻿body {
+    margin:0%;
+    padding:0%;
+}
+.errortool {
+    position: absolute;
+    top: -10%;
+    left: 31%;
+    box-shadow:inherit;
+    animation:alternate;
+    border-radius: 3px;
+    background-color: #FDCAC4;
+   
+    display: none;
+}
+    .errortool::before {
+        content: "";
+        width: 0;
+        height: 0;
+        border-left: 9px solid transparent;
+        border-right: 9px solid transparent;
+        border-top:9px solid #FDCAC4;
+        position:absolute;
+        bottom:-21%;left:10%;
+    }
+
+    .errortool:nth-child(2){
+        top:70px;
+        background-color:#D9F0FD;
+    }
+    .errortool:nth-child(2)::before {
+            border-top: 9px solid #D9F0FD;
+    }
+
+.errortool1 {
+    position: absolute;
+    left: 29%;
+    top: -10%;
+    box-shadow: inherit;
+    animation: alternate;
+    border-radius: 3px;
+    background-color: #FDCAC4;
+    display: none;
+}
+
+    .errortool1::before {
+        content: "";
+        width: 0;
+        height: 0;
+        border-left: 9px solid transparent;
+        border-right: 9px solid transparent;
+        border-top: 9px solid #FDCAC4;
+        position: absolute;
+        bottom: -21%;
+        left: 10%;
+    }
+
+    .errortool1:nth-child(2) {
+        top: 70px;
+        background-color: #D9F0FD;
+    }
+
+        .errortool1:nth-child(2)::before {
+            border-top: 9px solid #D9F0FD;
+        }
+
+
+
+
+
+.errortool2 {
+    position: absolute;
+    left: 35%;
+    top: -10%;
+    box-shadow: inherit;
+    animation: alternate;
+    border-radius: 3px;
+    background-color: #FDCAC4;
+    display: none;
+}
+
+    .errortool2::before {
+        content: "";
+        width: 0;
+        height: 0;
+        border-left: 9px solid transparent;
+        border-right: 9px solid transparent;
+        border-top: 9px solid #FDCAC4;
+        position: absolute;
+        bottom: -21%;
+        left: 10%;
+    }
+
+    .errortool2:nth-child(2) {
+        top: 70px;
+        background-color: #D9F0FD;
+    }
+
+        .errortool2:nth-child(2)::before {
+            border-top: 9px solid #D9F0FD;
+        }
+
+
+
+.errortool3 {
+    position: absolute;
+    left: 29%;
+    top: -10%;
+    box-shadow: inherit;
+    animation: alternate;
+    border-radius: 3px;
+    background-color: #FDCAC4;
+    display: none;
+}
+
+    .errortool3::before {
+        content: "";
+        width: 0;
+        height: 0;
+        border-left: 9px solid transparent;
+        border-right: 9px solid transparent;
+        border-top: 9px solid #FDCAC4;
+        position: absolute;
+        bottom: -21%;
+        left: 10%;
+    }
+
+    .errortool3:nth-child(2) {
+        top: 70px;
+        background-color: #D9F0FD;
+    }
+
+        .errortool3:nth-child(2)::before {
+            border-top: 9px solid #D9F0FD;
+        }
+
+
+
+
+
+.errortool4 {
+    position: absolute;
+    left: 35%;
+    top: -10%;
+    box-shadow: inherit;
+    animation: alternate;
+    border-radius: 3px;
+    background-color: #FDCAC4;
+    display: none;
+}
+
+    .errortool4::before {
+        content: "";
+        width: 0;
+        height: 0;
+        border-left: 9px solid transparent;
+        border-right: 9px solid transparent;
+        border-top: 9px solid #FDCAC4;
+        position: absolute;
+        bottom: -21%;
+        left: 10%;
+    }
+
+    .errortool4:nth-child(2) {
+        top: 70px;
+        background-color: #D9F0FD;
+    }
+
+        .errortool4:nth-child(2)::before {
+            border-top: 9px solid #D9F0FD;
+        }
+
+
+
+.errortool5 {
+    position: absolute;
+    left: 29%;
+    top: -10%;
+    box-shadow: inherit;
+    animation: alternate;
+    border-radius: 3px;
+    background-color: #FDCAC4;
+    display: none;
+}
+
+    .errortool5::before {
+        content: "";
+        width: 0;
+        height: 0;
+        border-left: 9px solid transparent;
+        border-right: 9px solid transparent;
+        border-top: 9px solid #FDCAC4;
+        position: absolute;
+        bottom: -21%;
+        left: 10%;
+    }
+
+    .errortool5:nth-child(2) {
+        top: 70px;
+        background-color: #D9F0FD;
+    }
+
+        .errortool5:nth-child(2)::before {
+            border-top: 9px solid #D9F0FD;
+        }
+
+
+
+
+.errortool6 {
+    position: absolute;
+    left: 35%;
+    top: -10%;
+    box-shadow: inherit;
+    animation: alternate;
+    border-radius: 3px;
+    background-color: #FDCAC4;
+    display: none;
+}
+
+    .errortool6::before {
+        content: "";
+        width: 0;
+        height: 0;
+        border-left: 9px solid transparent;
+        border-right: 9px solid transparent;
+        border-top: 9px solid #FDCAC4;
+        position: absolute;
+        bottom: -21%;
+        left: 10%;
+    }
+
+    .errortool6:nth-child(2) {
+        top: 70px;
+        background-color: #D9F0FD;
+    }
+
+        .errortool6:nth-child(2)::before {
+            border-top: 9px solid #D9F0FD;
+        }
+
+
+
+
+
+.errortool7 {
+    position: absolute;
+    left: 26%;
+    top: -25%;
+    box-shadow: inherit;
+    animation: alternate;
+    border-radius: 3px;
+    background-color: #FDCAC4;
+    display: none;
+}
+
+    .errortool7::before {
+        content: "";
+        width: 0;
+        height: 0;
+        border-left: 9px solid transparent;
+        border-right: 9px solid transparent;
+        border-top: 9px solid #FDCAC4;
+        position: absolute;
+        bottom: -21%;
+        left: 10%;
+    }
+
+    .errortool7:nth-child(2) {
+        top: 70px;
+        background-color: #D9F0FD;
+    }
+
+        .errortool7:nth-child(2)::before {
+            border-top: 9px solid #D9F0FD;
+        }
+
+
+.errortool8 {
+    position: absolute;
+    left: 22%;
+    top: -15%;
+    box-shadow: inherit;
+    animation: alternate;
+    border-radius: 3px;
+    background-color: #FDCAC4;
+    display: none;
+}
+
+    .errortool8::before {
+        content: "";
+        width: 0;
+        height: 0;
+        border-left: 9px solid transparent;
+        border-right: 9px solid transparent;
+        border-top: 9px solid #FDCAC4;
+        position: absolute;
+        bottom: -21%;
+        left: 10%;
+    }
+
+    .errortool8:nth-child(2) {
+        top: 70px;
+        background-color: #D9F0FD;
+    }
+
+        .errortool8:nth-child(2)::before {
+            border-top: 9px solid #D9F0FD;
+        }
+
+.errortool9 {
+    position: absolute;
+    left: -0%;
+    top: -60%;
+    box-shadow: inherit;
+    animation: alternate;
+    border-radius: 3px;
+    background-color: #FDCAC4;
+    display: none;
+}
+
+    .errortool9::before {
+        content: "";
+        width: 0;
+        height: 0;
+        border-left: 9px solid transparent;
+        border-right: 9px solid transparent;
+        border-top: 9px solid #FDCAC4;
+        position: absolute;
+        bottom: -21%;
+        left: 10%;
+    }
+
+    .errortool9:nth-child(2) {
+        top: 70px;
+        background-color: #D9F0FD;
+    }
+
+        .errortool9:nth-child(2)::before {
+            border-top: 9px solid #D9F0FD;
+        }
+
+
+.errortool10 {
+    position: absolute;
+    left: 10%;
+    top: -25%;
+    box-shadow: inherit;
+    animation: alternate;
+    border-radius: 3px;
+    background-color: #FDCAC4;
+    display: none;
+}
+
+    .errortool10::before {
+        content: "";
+        width: 0;
+        height: 0;
+        border-left: 9px solid transparent;
+        border-right: 9px solid transparent;
+        border-top: 9px solid #FDCAC4;
+        position: absolute;
+        bottom: -21%;
+        left: 10%;
+    }
+
+    .errortool10:nth-child(2) {
+        top: 70px;
+        background-color: #D9F0FD;
+    }
+
+        .errortool10:nth-child(2)::before {
+            border-top: 9px solid #D9F0FD;
+        }
+
+
+
+.errortool11 {
+    position: absolute;
+    left: 10%;
+    top: -10%;
+    box-shadow: inherit;
+    animation: alternate;
+    border-radius: 3px;
+    background-color: #FDCAC4;
+    display: none;
+}
+
+    .errortool11::before {
+        content: "";
+        width: 0;
+        height: 0;
+        border-left: 9px solid transparent;
+        border-right: 9px solid transparent;
+        border-top: 9px solid #FDCAC4;
+        position: absolute;
+        bottom: -21%;
+        left: 10%;
+    }
+
+    .errortool11:nth-child(2) {
+        top: 70px;
+        background-color: #D9F0FD;
+    }
+
+        .errortool11:nth-child(2)::before {
+            border-top: 9px solid #D9F0FD;
+        }
+.errortool13 {
+    position: absolute;
+    left: 10%;
+    top: -10%;
+    box-shadow: inherit;
+    animation: alternate;
+    border-radius: 3px;
+    background-color: #FDCAC4;
+    display: none;
+}
+
+.errortool13::before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-top: 9px solid #FDCAC4;
+    position: absolute;
+    bottom: -21%;
+    left: 10%;
+}
+
+.errortool13:nth-child(2) {
+    top: 70px;
+    background-color: #D9F0FD;
+}
+
+        .errortool13:nth-child(2)::before {
+            border-top: 9px solid #D9F0FD;
+        }
+
+
+.errortool15 {
+    position: absolute;
+    left: 10%;
+    top: -10%;
+    box-shadow: inherit;
+    animation: alternate;
+    border-radius: 3px;
+    background-color: #FDCAC4;
+    display: none;
+}
+
+.errortool15::before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-top: 9px solid #FDCAC4;
+    position: absolute;
+    bottom: -21%;
+    left: 10%;
+}
+
+.errortool15:nth-child(2) {
+    top: 70px;
+    background-color: #D9F0FD;
+}
+
+        .errortool15:nth-child(2)::before {
+            border-top: 9px solid #D9F0FD;
+        }
+
+
+
+
+.errortool12 {
+    position: absolute;
+    left: 0%;
+    top: -11%;
+    box-shadow: inherit;
+    animation: alternate;
+    border-radius: 3px;
+    background-color: #FDCAC4;
+    display: none;
+}
+
+    .errortool12::before {
+        content: "";
+        width: 0;
+        height: 0;
+        border-left: 9px solid transparent;
+        border-right: 9px solid transparent;
+        border-top: 9px solid #FDCAC4;
+        position: absolute;
+        bottom: -21%;
+        left: 10%;
+    }
+
+    .errortool12:nth-child(2) {
+        top: 70px;
+        background-color: #D9F0FD;
+    }
+
+        .errortool12:nth-child(2)::before {
+            border-top: 9px solid #D9F0FD;
+        }
+
+
+.errortool14 {
+    position: absolute;
+    left: 0%;
+    top: -11%;
+    box-shadow: inherit;
+    animation: alternate;
+    border-radius: 3px;
+    background-color: #FDCAC4;
+    display: none;
+}
+
+.errortool14::before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-top: 9px solid #FDCAC4;
+    position: absolute;
+    bottom: -21%;
+    left: 10%;
+}
+
+.errortool14:nth-child(2) {
+    top: 70px;
+    background-color: #D9F0FD;
+}
+
+        .errortool14:nth-child(2)::before {
+            border-top: 9px solid #D9F0FD;
+        }
+
+
+.errortool16 {
+    position: absolute;
+    left: 0%;
+    top: -11%;
+    box-shadow: inherit;
+    animation: alternate;
+    border-radius: 3px;
+    background-color: #FDCAC4;
+    display: none;
+}
+
+.errortool16::before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-top: 9px solid #FDCAC4;
+    position: absolute;
+    bottom: -21%;
+    left: 10%;
+}
+
+.errortool16:nth-child(2) {
+    top: 70px;
+    background-color: #D9F0FD;
+}
+
+        .errortool16:nth-child(2)::before {
+            border-top: 9px solid #D9F0FD;
+        }
+
+
+.errortool17 {
+    position: absolute;
+    left: 40%;
+    top: -10%;
+    box-shadow: inherit;
+    animation: alternate;
+    border-radius: 3px;
+    background-color: #FDCAC4;
+    display: none;
+}
+
+.errortool17::before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-top: 9px solid #FDCAC4;
+    position: absolute;
+    bottom: -21%;
+    left: 10%;
+}
+
+.errortool17:nth-child(2) {
+    top: 70px;
+    background-color: #D9F0FD;
+}
+
+    .errortool17:nth-child(2)::before {
+        border-top: 9px solid #D9F0FD;
+    }
+
+
+
+
+.errortool18 {
+    position: absolute;
+    left: 40%;
+    top: -10%;
+    box-shadow: inherit;
+    animation: alternate;
+    border-radius: 3px;
+    background-color: #FDCAC4;
+    display: none;
+}
+
+    .errortool18::before {
+        content: "";
+        width: 0;
+        height: 0;
+        border-left: 9px solid transparent;
+        border-right: 9px solid transparent;
+        border-top: 9px solid #FDCAC4;
+        position: absolute;
+        bottom: -21%;
+        left: 10%;
+    }
+
+    .errortool18:nth-child(2) {
+        top: 70px;
+        background-color: #D9F0FD;
+    }
+
+        .errortool18:nth-child(2)::before {
+            border-top: 9px solid #D9F0FD;
+        }
+
+
+
+
+.errortool19 {
+    position: absolute;
+    left: 40%;
+    top: -10%;
+    box-shadow: inherit;
+    animation: alternate;
+    border-radius: 3px;
+    background-color: #FDCAC4;
+    display: none;
+}
+
+    .errortool19::before {
+        content: "";
+        width: 0;
+        height: 0;
+        border-left: 9px solid transparent;
+        border-right: 9px solid transparent;
+        border-top: 9px solid #FDCAC4;
+        position: absolute;
+        bottom: -21%;
+        left: 10%;
+    }
+
+    .errortool19:nth-child(2) {
+        top: 70px;
+        background-color: #D9F0FD;
+    }
+
+        .errortool19:nth-child(2)::before {
+            border-top: 9px solid #D9F0FD;
+        }
+
+
+
+
+
+.errortool20 {
+    position: absolute;
+    left: 10%;
+    top: -10%;
+    box-shadow: inherit;
+    animation: alternate;
+    border-radius: 3px;
+    background-color: #FDCAC4;
+    display: none;
+}
+
+    .errortool20::before {
+        content: "";
+        width: 0;
+        height: 0;
+        border-left: 9px solid transparent;
+        border-right: 9px solid transparent;
+        border-top: 9px solid #FDCAC4;
+        position: absolute;
+        bottom: -21%;
+        left: 10%;
+    }
+
+    .errortool20:nth-child(2) {
+        top: 70px;
+        background-color: #D9F0FD;
+    }
+
+        .errortool20:nth-child(2)::before {
+            border-top: 9px solid #D9F0FD;
+        }
+
+
+
+.errortool21 {
+    position: absolute;
+    left: 10%;
+    top: -10%;
+    box-shadow: inherit;
+    animation: alternate;
+    border-radius: 3px;
+    background-color: #FDCAC4;
+    display: none;
+}
+
+.errortool21::before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-top: 9px solid #FDCAC4;
+    position: absolute;
+    bottom: -21%;
+    left: 10%;
+}
+
+.errortool21:nth-child(2) {
+    top: 70px;
+    background-color: #D9F0FD;
+}
+
+        .errortool21:nth-child(2)::before {
+            border-top: 9px solid #D9F0FD;
+        }
+
+
+
+
+.errortool22 {
+    position: absolute;
+    left: 10%;
+    top: -10%;
+    box-shadow: inherit;
+    animation: alternate;
+    border-radius: 3px;
+    background-color: #FDCAC4;
+    display: none;
+}
+
+    .errortool22::before {
+        content: "";
+        width: 0;
+        height: 0;
+        border-left: 9px solid transparent;
+        border-right: 9px solid transparent;
+        border-top: 9px solid #FDCAC4;
+        position: absolute;
+        bottom: -21%;
+        left: 10%;
+    }
+
+    .errortool22:nth-child(2) {
+        top: 70px;
+        background-color: #D9F0FD;
+    }
+
+        .errortool22:nth-child(2)::before {
+            border-top: 9px solid #D9F0FD;
+        }
